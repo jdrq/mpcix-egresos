@@ -147,176 +147,9 @@ body
 			<td colspan="9"><div class='title'><img src='../Images/Transparencia.gif' alt='' height='40' /><br /><br />Consulta Amigable</div><div class='subtitle'>Consulta de Ejecución del Gasto</div><br /><div class='fecha'>Fecha de la Consulta: 10-agosto-2026</div><br /><b>Año de Ejecución: <span class='value'>2026</span><br />Incluye: <span class='value'>Sólo Proyectos</span></b></td>
 		</tr>
 	</table>
-	
-                    <table class="History" cellspacing="0" cellpadding="1">
-                
-                    <tr align="right">
-                        
-                        <td align="left" style="font-size: 7pt; width: auto">
-                            TOTAL
-                            
-                            
-                            
-                            
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            48,594,496,937
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            70,547,005,361
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            58,025,077,074
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            46,949,183,080
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            38,052,943,751
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            32,427,255,017
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            30,957,860,240
-                        </td>
-                        <td align="right" style="width: 50px; white-space: nowrap">&nbsp;46.0</td>
-                    </tr>
-                
-                    <tr align="right" class="alt">
-                        
-                        <td align="left" style="font-size: 7pt; width: auto" tabindex="9">
-                            Nivel de Gobierno M: GOBIERNOS LOCALES
-                            
-                            
-                            
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="10">
-                            14,579,409,942
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="11">
-                            30,678,342,526
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="12">
-                            23,063,748,874
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="13">
-                            16,674,308,807
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="14">
-                            14,313,240,557
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="15">
-                            11,329,756,661
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="16">
-                            10,649,968,285
-                        </td>
-                        <td align="right" style="width: 50px; white-space: nowrap" tabindex="17">&nbsp;36.9</td>
-                    </tr>
-                
-                    <tr align="right">
-                        
-                        <td align="left" style="font-size: 7pt; width: auto">
-                            Gob.Loc./Mancom. M: MUNICIPALIDADES
-                            
-                            
-                            
-                            
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            14,579,409,942
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            30,675,698,405
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            23,061,349,652
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            16,674,237,634
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            14,313,169,384
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            11,329,696,512
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            10,649,908,136
-                        </td>
-                        <td align="right" style="width: 50px; white-space: nowrap">&nbsp;36.9</td>
-                    </tr>
-                
-                    <tr align="right" class="alt">
-                        
-                        <td align="left" style="font-size: 7pt; width: auto" tabindex="9">
-                            Departamento 14: LAMBAYEQUE
-                            
-                            
-                            
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="10">
-                            188,653,665
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="11">
-                            529,463,961
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="12">
-                            417,247,134
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="13">
-                            296,416,367
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="14">
-                            197,979,640
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="15">
-                            168,214,403
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="16">
-                            165,734,964
-                        </td>
-                        <td align="right" style="width: 50px; white-space: nowrap" tabindex="17">&nbsp;31.8</td>
-                    </tr>
-                
-                    <tr align="right">
-                        
-                        <td align="left" style="font-size: 7pt; width: auto">
-                            Municipalidad 140101-301212: MUNICIPALIDAD PROVINCIAL DE CHICLAYO
-                            
-                            
-                            
-                            
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            24,788,128
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            36,464,141
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            32,170,887
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            30,054,220
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            19,314,847
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            19,239,399
-                        </td>
-                        <td align="right" style="width: 100px; white-space: nowrap">
-                            19,215,738
-                        </td>
-                        <td align="right" style="width: 50px; white-space: nowrap">&nbsp;52.8</td>
-                    </tr>
-                
-                    </table>
-                <table id="ctl00_CPH1_Mt0" class="MapTable" style="width:100%;">
+	<table id="ctl00_CPH1_Mt0" class="MapTable" style="width:100%;">
 		<tr id="ctl00_CPH1_Mt0_Row0">
-			<td id="ctl00_CPH1_Mt0_td1" title="Concepto" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td1&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="cursor:hand;">Fuente de Financiamiento</td><td id="ctl00_CPH1_Mt0_td2" title="Presupuesto Institucional de Apertura" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td2&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIA</td><td id="ctl00_CPH1_Mt0_td3" title="Presupuesto Institucional Modificado" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td3&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIM</td><td id="ctl00_CPH1_Mt0_td9" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td9&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Certificación</td><td id="ctl00_CPH1_Mt0_td4" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td4&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Compromiso Anual</td><td id="ctl00_CPH1_Mt0_TableCell1" title="Ejecución de Gastos en las diferentes fases" colspan="3">
+			<td id="ctl00_CPH1_Mt0_td1" title="Concepto" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td1&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="cursor:hand;">&nbsp;</td><td id="ctl00_CPH1_Mt0_td2" title="Presupuesto Institucional de Apertura" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td2&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIA</td><td id="ctl00_CPH1_Mt0_td3" title="Presupuesto Institucional Modificado" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td3&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIM</td><td id="ctl00_CPH1_Mt0_td9" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td9&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Certificación</td><td id="ctl00_CPH1_Mt0_td4" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td4&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Compromiso Anual</td><td id="ctl00_CPH1_Mt0_TableCell1" title="Ejecución de Gastos en las diferentes fases" colspan="3">
                                 Ejecución
                                 </td><td id="ctl00_CPH1_Mt0_td8" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td8&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:50px;cursor:hand;">Avance %&nbsp;
                             </td>
@@ -329,70 +162,36 @@ body
 	</table>
                             <table class="Data" cellspacing="0" cellpadding="1">
                         
-                            <tr id="tr0" onclick='kCod="1";tr_clk(0, this)'
+                            <tr id="tr0" onclick='kCod="";tr_clk(0, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left" style="width: auto">
-                                    1: RECURSOS ORDINARIOS
+                                    TOTAL
                                     
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    1,711,308
+                                    48,594,496,937
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    1,913,103
+                                    70,547,005,361
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    1,068,079
+                                    58,025,077,074
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    1,062,215
+                                    46,949,183,080
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    874,968
+                                    38,052,943,751
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    874,968
+                                    32,427,255,017
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    874,968
+                                    30,957,860,240
                                 </td>
                                 <td style="white-space: nowrap; width: 50px">&nbsp;
-                                    45.7
-                                </td>
-                            </tr>
-                            
-                        
-                            <tr class="alt" id="tr1" onclick='kCod="5";tr_clk(1, this)'
-                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
-                                
-                                <td align="left">
-                                    5: RECURSOS DETERMINADOS
-                                    
-                                </td>
-                                <td>
-                                    23,076,820
-                                </td>
-                                <td>
-                                    34,551,038
-                                </td>
-                                <td>
-                                    31,102,808
-                                </td>
-                                <td>
-                                    28,992,005
-                                </td>
-                                <td>
-                                    18,439,879
-                                </td>
-                                <td>
-                                    18,364,431
-                                </td>
-                                <td>
-                                    18,340,770
-                                </td>
-                                <td>&nbsp;
-                                    53.2
+                                    46.0
                                 </td>
                             </tr>
                             
