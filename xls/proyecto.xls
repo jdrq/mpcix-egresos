@@ -280,10 +280,43 @@ body
                         <td align="right" style="width: 50px; white-space: nowrap" tabindex="17">&nbsp;36.9</td>
                     </tr>
                 
+                    <tr align="right">
+                        
+                        <td align="left" style="font-size: 7pt; width: auto">
+                            Municipalidad 140101-301212: MUNICIPALIDAD PROVINCIAL DE CHICLAYO
+                            
+                            
+                            
+                            
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            24,788,128
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            36,464,141
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            32,116,715
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            30,108,584
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            22,487,283
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            22,384,757
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            21,803,474
+                        </td>
+                        <td align="right" style="width: 50px; white-space: nowrap">&nbsp;61.4</td>
+                    </tr>
+                
                     </table>
                 <table id="ctl00_CPH1_Mt0" class="MapTable" style="width:100%;">
 		<tr id="ctl00_CPH1_Mt0_Row0">
-			<td id="ctl00_CPH1_Mt0_td1" title="Concepto" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td1&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="cursor:hand;">Municipalidad</td><td id="ctl00_CPH1_Mt0_td2" title="Presupuesto Institucional de Apertura" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td2&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIA</td><td id="ctl00_CPH1_Mt0_td3" title="Presupuesto Institucional Modificado" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td3&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIM</td><td id="ctl00_CPH1_Mt0_td9" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td9&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Certificación</td><td id="ctl00_CPH1_Mt0_td4" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td4&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Compromiso Anual</td><td id="ctl00_CPH1_Mt0_TableCell1" title="Ejecución de Gastos en las diferentes fases" colspan="3">
+			<td id="ctl00_CPH1_Mt0_td1" title="Concepto" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td1&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="cursor:hand;">Proyecto</td><td id="ctl00_CPH1_Mt0_td2" title="Presupuesto Institucional de Apertura" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td2&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIA</td><td id="ctl00_CPH1_Mt0_td3" title="Presupuesto Institucional Modificado" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td3&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIM</td><td id="ctl00_CPH1_Mt0_td9" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td9&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Certificación</td><td id="ctl00_CPH1_Mt0_td4" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td4&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Compromiso Anual</td><td id="ctl00_CPH1_Mt0_TableCell1" title="Ejecución de Gastos en las diferentes fases" colspan="3">
                                 Ejecución
                                 </td><td id="ctl00_CPH1_Mt0_td8" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td8&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:50px;cursor:hand;">Avance %&nbsp;
                             </td>
@@ -296,1294 +329,1294 @@ body
 	</table>
                             <table class="Data" cellspacing="0" cellpadding="1">
                         
-                            <tr id="tr0" onclick='kCod="301212";tr_clk(0, this)'
+                            <tr id="tr0" onclick='kCod="2001621";tr_clk(0, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left" style="width: auto">
-                                    140101-301212: MUNICIPALIDAD PROVINCIAL DE CHICLAYO
+                                    2001621: ESTUDIOS DE PRE-INVERSION
                                     
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    24,788,128
+                                    3,537,887
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    36,464,141
+                                    835,146
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    32,116,715
+                                    0
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    30,108,584
+                                    0
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    22,487,283
+                                    0
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    22,384,757
+                                    0
                                 </td>
                                 <td style="white-space: nowrap; width: 100px">
-                                    21,803,474
+                                    0
                                 </td>
                                 <td style="white-space: nowrap; width: 50px">&nbsp;
-                                    61.4
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr1" onclick='kCod="301213";tr_clk(1, this)'
+                            <tr class="alt" id="tr1" onclick='kCod="2211919";tr_clk(1, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140102-301213: MUNICIPALIDAD DISTRITAL DE CHONGOYAPE
-                                    
-                                </td>
-                                <td>
-                                    100,000
-                                </td>
-                                <td>
-                                    2,442,807
-                                </td>
-                                <td>
-                                    1,370,314
-                                </td>
-                                <td>
-                                    772,863
-                                </td>
-                                <td>
-                                    772,863
-                                </td>
-                                <td>
-                                    537,872
-                                </td>
-                                <td>
-                                    537,872
-                                </td>
-                                <td>&nbsp;
-                                    22.0
-                                </td>
-                            </tr>
-                            
-                        
-                            <tr class="alt" id="tr2" onclick='kCod="301214";tr_clk(2, this)'
-                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
-                                
-                                <td align="left">
-                                    140103-301214: MUNICIPALIDAD DISTRITAL DE ETEN
-                                    
-                                </td>
-                                <td>
-                                    162,606
-                                </td>
-                                <td>
-                                    10,423,461
-                                </td>
-                                <td>
-                                    9,891,092
-                                </td>
-                                <td>
-                                    9,891,090
-                                </td>
-                                <td>
-                                    4,379,651
-                                </td>
-                                <td>
-                                    4,364,591
-                                </td>
-                                <td>
-                                    4,364,591
-                                </td>
-                                <td>&nbsp;
-                                    41.9
-                                </td>
-                            </tr>
-                            
-                        
-                            <tr class="alt" id="tr3" onclick='kCod="301215";tr_clk(3, this)'
-                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
-                                
-                                <td align="left">
-                                    140104-301215: MUNICIPALIDAD DISTRITAL DE ETEN PUERTO
+                                    2211919: MEJORAMIENTO DE LA TRANSITABILIDAD VEHICULAR Y PEATONAL EN LA CA. SERGIO BERMEJO QUIROGA TRAMO ENTRE LA CA, KARL WEISS O CA. 30 DE AGOSTO Y AV. GARCILAZO DE LA VEGA DEL DISTRITO DE CHICLAYO, PROVINCIA DE CHICLAYO - LAMBAYEQUE
                                     
                                 </td>
                                 <td>
                                     0
                                 </td>
                                 <td>
-                                    2,737,039
+                                    112,405
                                 </td>
                                 <td>
-                                    2,399,969
+                                    0
                                 </td>
                                 <td>
-                                    616,637
+                                    0
                                 </td>
                                 <td>
-                                    616,637
+                                    0
                                 </td>
                                 <td>
-                                    425,714
+                                    0
                                 </td>
                                 <td>
-                                    423,145
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    15.6
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr4" onclick='kCod="301216";tr_clk(4, this)'
+                            <tr class="alt" id="tr2" onclick='kCod="2378560";tr_clk(2, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140105-301216: MUNICIPALIDAD DISTRITAL DE JOSE LEONARDO ORTIZ
+                                    2378560: REHABILITACION DE LA AVENIDA VICTOR ANDRES BELAUNDE ENTRE LA AVENIDA ZARUMILLA Y LA AVENIDA EL PROGRESO DEL DISTRITO DE CHICLAYO, PROVINCIA DE CHICLAYO- LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    5,071,821
+                                    101,727
                                 </td>
                                 <td>
-                                    38,588,643
+                                    101,727
                                 </td>
                                 <td>
-                                    35,622,022
+                                    0
                                 </td>
                                 <td>
-                                    32,526,464
+                                    0
                                 </td>
                                 <td>
-                                    20,996,806
+                                    0
                                 </td>
                                 <td>
-                                    20,862,529
+                                    0
                                 </td>
                                 <td>
-                                    20,657,082
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    54.1
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr5" onclick='kCod="301217";tr_clk(5, this)'
+                            <tr class="alt" id="tr3" onclick='kCod="2378573";tr_clk(3, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140106-301217: MUNICIPALIDAD DISTRITAL DE LA VICTORIA
+                                    2378573: REHABILITACION DE LA AVENIDA PASEO DEL DEPORTE ENTRE LA AVENIDA ZARUMILLA Y LA CALLE EL VIRREY, DEL DISTRITO DE CHICLAYO, PROVINCIA DE CHICLAYO, DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    16,707,627
+                                    141,269
                                 </td>
                                 <td>
-                                    36,704,020
+                                    141,269
                                 </td>
                                 <td>
-                                    27,892,577
+                                    0
                                 </td>
                                 <td>
-                                    27,372,758
+                                    0
                                 </td>
                                 <td>
-                                    27,051,426
+                                    0
                                 </td>
                                 <td>
-                                    18,487,804
+                                    0
                                 </td>
                                 <td>
-                                    18,435,804
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    50.4
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr6" onclick='kCod="301218";tr_clk(6, this)'
+                            <tr class="alt" id="tr4" onclick='kCod="2378597";tr_clk(4, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140107-301218: MUNICIPALIDAD DISTRITAL DE LAGUNAS
+                                    2378597: REHABILITACION DE LA CALLE BOLIVAR DESDE LA CALLE MANUEL PARDO HASTA LA CALLE PEDRO RUIZ, DISTRITO DE CHICLAYO, PROVINCIA DE CHICLAYO, DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    9,356,561
+                                    0
                                 </td>
                                 <td>
-                                    16,825,247
+                                    2,030,814
                                 </td>
                                 <td>
-                                    16,177,165
+                                    1,921,510
                                 </td>
                                 <td>
-                                    7,564,485
+                                    1,921,510
                                 </td>
                                 <td>
-                                    7,564,484
+                                    1,245,301
                                 </td>
                                 <td>
-                                    7,539,483
+                                    1,229,341
                                 </td>
                                 <td>
-                                    7,539,483
+                                    1,229,341
                                 </td>
                                 <td>&nbsp;
-                                    44.8
+                                    60.5
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr7" onclick='kCod="301219";tr_clk(7, this)'
+                            <tr class="alt" id="tr5" onclick='kCod="2381620";tr_clk(5, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140108-301219: MUNICIPALIDAD DISTRITAL DE MONSEFU
+                                    2381620: MEJORAMIENTO DEL SERVICIO DE TRANSITABILIDAD VEHICULAR Y PEATONAL EN LA AVENIDA EL EJERCITO ENTRE AV. JUAN TOMIS STACK Y CALLE NACIONALISMO, DISTRITO DE CHICLAYO, PROVINCIA DE CHICLAYO- LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    2,660,787
+                                    0
                                 </td>
                                 <td>
-                                    4,104,554
+                                    31,355
                                 </td>
                                 <td>
-                                    3,270,670
+                                    0
                                 </td>
                                 <td>
-                                    3,096,058
+                                    0
                                 </td>
                                 <td>
-                                    2,963,121
+                                    0
                                 </td>
                                 <td>
-                                    2,720,155
+                                    0
                                 </td>
                                 <td>
-                                    2,720,155
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    66.3
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr8" onclick='kCod="301220";tr_clk(8, this)'
+                            <tr class="alt" id="tr6" onclick='kCod="2410696";tr_clk(6, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140109-301220: MUNICIPALIDAD DISTRITAL DE NUEVA ARICA
+                                    2410696: MEJORAMIENTO DEL SERVICIO DE AGUA POTABLE Y ALCANTARILLADO DE LA URBANIZACION SANTA ELENA DEL DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    902,164
+                                    1,098,347
                                 </td>
                                 <td>
-                                    8,340,232
+                                    1,089,856
                                 </td>
                                 <td>
-                                    7,889,772
+                                    982,375
                                 </td>
                                 <td>
-                                    1,860,954
+                                    982,375
                                 </td>
                                 <td>
-                                    920,001
+                                    906,184
                                 </td>
                                 <td>
-                                    920,001
+                                    870,119
                                 </td>
                                 <td>
-                                    920,001
+                                    870,119
                                 </td>
                                 <td>&nbsp;
-                                    11.0
+                                    79.8
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr9" onclick='kCod="301221";tr_clk(9, this)'
+                            <tr class="alt" id="tr7" onclick='kCod="2411251";tr_clk(7, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140110-301221: MUNICIPALIDAD DISTRITAL DE OYOTUN
+                                    2411251: MEJORAMIENTO DEL SERVICIO DE AGUA POTABLE Y ALCANTARILLADO SANITARIO DE LA URBANIZACION HIPOLITO UNANUE, DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    613,463
+                                    0
                                 </td>
                                 <td>
-                                    15,678,562
+                                    393,768
                                 </td>
                                 <td>
-                                    13,210,219
+                                    0
                                 </td>
                                 <td>
-                                    12,763,558
+                                    0
                                 </td>
                                 <td>
-                                    12,763,558
+                                    0
                                 </td>
                                 <td>
-                                    10,741,236
+                                    0
                                 </td>
                                 <td>
-                                    10,707,122
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    68.5
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr10" onclick='kCod="301222";tr_clk(10, this)'
+                            <tr class="alt" id="tr8" onclick='kCod="2412415";tr_clk(8, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140111-301222: MUNICIPALIDAD DISTRITAL DE PICSI
+                                    2412415: MEJORAMIENTO DEL SERVICIO DE TRANSITABILIDAD VEHICULAR Y PEATONAL EN EL P.J. SAN SEBASTIAN DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    3,542,772
+                                    429,043
                                 </td>
                                 <td>
-                                    5,191,255
+                                    429,043
                                 </td>
                                 <td>
-                                    4,830,013
+                                    0
                                 </td>
                                 <td>
-                                    4,408,478
+                                    0
                                 </td>
                                 <td>
-                                    3,814,267
+                                    0
                                 </td>
                                 <td>
-                                    3,521,353
+                                    0
                                 </td>
                                 <td>
-                                    3,521,353
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    67.8
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr11" onclick='kCod="301223";tr_clk(11, this)'
+                            <tr class="alt" id="tr9" onclick='kCod="2478042";tr_clk(9, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140112-301223: MUNICIPALIDAD DISTRITAL DE PIMENTEL
+                                    2478042: MEJORAMIENTO DEL SERVICIO DE AGUA POTABLE Y ALCANTARILLADO DEL PUEBLO JOVEN JORGE BASADRE DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    9,882,594
+                                    1,348,833
                                 </td>
                                 <td>
-                                    19,820,993
+                                    0
                                 </td>
                                 <td>
-                                    19,345,739
+                                    0
                                 </td>
                                 <td>
-                                    9,570,888
+                                    0
                                 </td>
                                 <td>
-                                    4,970,030
+                                    0
                                 </td>
                                 <td>
-                                    4,779,848
+                                    0
                                 </td>
                                 <td>
-                                    4,779,848
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    24.1
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr12" onclick='kCod="301224";tr_clk(12, this)'
+                            <tr class="alt" id="tr10" onclick='kCod="2483508";tr_clk(10, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140113-301224: MUNICIPALIDAD DISTRITAL DE REQUE
+                                    2483508: REHABILITACION DE LA INFRAESTRUCTURA DE LA INSTITUCION EDUCATIVA INICIAL N°003 - LOS PASTORCITOS DE LA VIRGEN DE FATIMA (CODIGO LOCAL 275443), P.J. SAN ANTONIO, DISTRITO Y PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    245,852
+                                    328,768
                                 </td>
                                 <td>
-                                    1,494,390
+                                    49,453
                                 </td>
                                 <td>
-                                    843,153
+                                    0
                                 </td>
                                 <td>
-                                    773,153
+                                    0
                                 </td>
                                 <td>
-                                    725,220
+                                    0
                                 </td>
                                 <td>
-                                    471,102
+                                    0
                                 </td>
                                 <td>
-                                    458,802
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    31.5
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr13" onclick='kCod="301225";tr_clk(13, this)'
+                            <tr class="alt" id="tr11" onclick='kCod="2485725";tr_clk(11, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140114-301225: MUNICIPALIDAD DISTRITAL DE SANTA ROSA
+                                    2485725: REHABILITACION DEL LOCAL ESCOLAR 10002 CON CODIGO LOCAL 275706, URB. EL PARAISO, DISTRITO Y PROVINCIA DE CHICLAYO, DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    333,498
+                                    27,788
                                 </td>
                                 <td>
-                                    2,959,150
+                                    27,788
                                 </td>
                                 <td>
-                                    2,582,175
+                                    0
                                 </td>
                                 <td>
-                                    2,351,627
+                                    0
                                 </td>
                                 <td>
-                                    1,926,204
+                                    0
                                 </td>
                                 <td>
-                                    1,844,047
+                                    0
                                 </td>
                                 <td>
-                                    1,735,392
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    62.3
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr14" onclick='kCod="301226";tr_clk(14, this)'
+                            <tr class="alt" id="tr12" onclick='kCod="2486393";tr_clk(12, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140115-301226: MUNICIPALIDAD DISTRITAL DE ZAÑA
+                                    2486393: REPARACION DE PAVIMENTO; EN EL(LA) AVENIDA ANGAMOS, AVENIDA BALTA, AVENIDA EL CARMEN, AVENIDA JOSE EUFEMIO LORA Y LORA, AVENIDA LUIS GONZALES, AVENIDA NACIONALISMO, AVENIDA PEDRO RUIZ, AVENIDA VICTOR RAUL HAYA DE LA TORRE, AVENIDA EL PROGRESO DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    2,078,222
+                                    0
                                 </td>
                                 <td>
-                                    12,824,306
+                                    12,706
                                 </td>
                                 <td>
-                                    12,417,416
+                                    12,706
                                 </td>
                                 <td>
-                                    6,408,808
+                                    12,706
                                 </td>
                                 <td>
-                                    6,408,808
+                                    12,706
                                 </td>
                                 <td>
-                                    5,684,338
+                                    12,706
                                 </td>
                                 <td>
-                                    5,681,430
+                                    12,706
                                 </td>
                                 <td>&nbsp;
-                                    44.3
+                                    100.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr15" onclick='kCod="301227";tr_clk(15, this)'
+                            <tr class="alt" id="tr13" onclick='kCod="2486395";tr_clk(13, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140116-301227: MUNICIPALIDAD DISTRITAL DE CAYALTI
+                                    2486395: REPARACION DE PAVIMENTO; EN EL(LA) CALLE ARICA, CALLE 07 DE ENERO, CALLE TUMBOS, CALLE JUAN FANNING, CALLE TARAPACA, CALLE LAS DIAMELAS DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    614,068
+                                    100,079
                                 </td>
                                 <td>
-                                    6,377,123
+                                    30,942
                                 </td>
                                 <td>
-                                    5,806,089
+                                    0
                                 </td>
                                 <td>
-                                    5,803,439
+                                    0
                                 </td>
                                 <td>
-                                    2,040,073
+                                    0
                                 </td>
                                 <td>
-                                    1,736,461
+                                    0
                                 </td>
                                 <td>
-                                    1,736,461
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    27.2
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr16" onclick='kCod="301228";tr_clk(16, this)'
+                            <tr class="alt" id="tr14" onclick='kCod="2492655";tr_clk(14, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140117-301228: MUNICIPALIDAD DISTRITAL DE PATAPO
+                                    2492655: RECUPERACION DE LA INFRAESTRUCTURA DE INSTITUCION EDUCATIVA N°11631 EL EDEN CON CODIGO LOCAL 806734 EN EL PUEBLO JOVEN JESUS NAZARENO, EN EL DISTRITO Y PROVINCIA DE CHICLAYO, DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    1,136,559
+                                    293,271
                                 </td>
                                 <td>
-                                    16,859,764
+                                    0
                                 </td>
                                 <td>
-                                    14,546,728
+                                    0
                                 </td>
                                 <td>
-                                    2,908,587
+                                    0
                                 </td>
                                 <td>
-                                    2,866,812
+                                    0
                                 </td>
                                 <td>
-                                    2,854,812
+                                    0
                                 </td>
                                 <td>
-                                    2,854,812
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    16.9
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr17" onclick='kCod="301229";tr_clk(17, this)'
+                            <tr class="alt" id="tr15" onclick='kCod="2496306";tr_clk(15, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140118-301229: MUNICIPALIDAD DISTRITAL DE POMALCA
+                                    2496306: RECUPERACION DE LA INFRAESTRUCTURA DE LA INSTITUCION EDUCATIVA N°11151 MONSEÑOR AUGUSTO VARGAS (CODIGO LOCAL N° 276013) DISTRITO DE CHICLAYO, PROVINCIA DE CHICLAYO, DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    357,270
+                                    25,459
                                 </td>
                                 <td>
-                                    1,405,694
+                                    25,459
                                 </td>
                                 <td>
-                                    363,795
+                                    0
                                 </td>
                                 <td>
-                                    363,795
+                                    0
                                 </td>
                                 <td>
-                                    363,761
+                                    0
                                 </td>
                                 <td>
-                                    116,432
+                                    0
                                 </td>
                                 <td>
-                                    116,432
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    8.3
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr18" onclick='kCod="301230";tr_clk(18, this)'
+                            <tr class="alt" id="tr16" onclick='kCod="2497830";tr_clk(16, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140119-301230: MUNICIPALIDAD DISTRITAL DE PUCALA
+                                    2497830: REHABILITACION DEL LOCAL ESCOLAR Nº 11271 SIGLO XXI CON CODIGO LOCAL 277135, LOCALIDAD LUIS ALBERTO SANCHEZ, DISTRITO Y PROVINCIA DE CHICLAYO - LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    1,501,188
+                                    62,670
                                 </td>
                                 <td>
-                                    5,084,818
+                                    13,440
                                 </td>
                                 <td>
-                                    4,073,530
+                                    0
                                 </td>
                                 <td>
-                                    3,835,159
+                                    0
                                 </td>
                                 <td>
-                                    3,756,590
+                                    0
                                 </td>
                                 <td>
-                                    3,754,553
+                                    0
                                 </td>
                                 <td>
-                                    3,754,553
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    73.8
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr19" onclick='kCod="301231";tr_clk(19, this)'
+                            <tr class="alt" id="tr17" onclick='kCod="2507404";tr_clk(17, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140120-301231: MUNICIPALIDAD DISTRITAL DE TUMAN
+                                    2507404: REHABILITACION DEL LOCAL ESCOLAR N° 10925 CESAR VALLEJO CON CODIGO LOCAL 275952 P.J. LOPEZ ALBUJAR, DISTRITO Y PROVINCIA DE CHICLAYO - LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    3,260,838
+                                    0
                                 </td>
                                 <td>
-                                    4,167,623
+                                    2,921,607
                                 </td>
                                 <td>
-                                    2,874,005
+                                    2,921,606
                                 </td>
                                 <td>
-                                    2,874,005
+                                    2,921,606
                                 </td>
                                 <td>
-                                    2,731,824
+                                    2,814,388
                                 </td>
                                 <td>
-                                    2,596,114
+                                    2,814,388
                                 </td>
                                 <td>
-                                    2,596,114
+                                    2,814,388
                                 </td>
                                 <td>&nbsp;
-                                    62.3
+                                    96.3
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr20" onclick='kCod="301232";tr_clk(20, this)'
+                            <tr class="alt" id="tr18" onclick='kCod="2509424";tr_clk(18, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140201-301232: MUNICIPALIDAD PROVINCIAL DE FERREÑAFE
+                                    2509424: REPARACION DE CALZADA Y VEREDA; EN EL(LA) URBANIZACION SANTA VICTORIA DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    5,960,338
+                                    243,304
                                 </td>
                                 <td>
-                                    24,908,713
+                                    0
                                 </td>
                                 <td>
-                                    22,156,760
+                                    0
                                 </td>
                                 <td>
-                                    21,426,379
+                                    0
                                 </td>
                                 <td>
-                                    9,657,579
+                                    0
                                 </td>
                                 <td>
-                                    9,135,455
+                                    0
                                 </td>
                                 <td>
-                                    8,601,021
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    36.7
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr21" onclick='kCod="301233";tr_clk(21, this)'
+                            <tr class="alt" id="tr19" onclick='kCod="2511819";tr_clk(19, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140202-301233: MUNICIPALIDAD DISTRITAL DE KAÑARIS
+                                    2511819: REPARACION DE PAVIMENTO, VEREDA Y SARDINEL; EN EL(LA) . URB CAJA DEPOSITO, URB. BANCARIOS Y URB. MAGISTERIAL DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    2,100,216
+                                    257,499
                                 </td>
                                 <td>
-                                    7,263,627
+                                    0
                                 </td>
                                 <td>
-                                    6,429,300
+                                    0
                                 </td>
                                 <td>
-                                    5,643,329
+                                    0
                                 </td>
                                 <td>
-                                    3,395,674
+                                    0
                                 </td>
                                 <td>
-                                    2,256,869
+                                    0
                                 </td>
                                 <td>
-                                    2,238,868
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    31.1
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr22" onclick='kCod="301234";tr_clk(22, this)'
+                            <tr class="alt" id="tr20" onclick='kCod="2515449";tr_clk(20, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140203-301234: MUNICIPALIDAD DISTRITAL DE INCAHUASI
+                                    2515449: RECUPERACION DE AMBIENTE DE ADMINISTRACION Y/O GESTION PEDAGOGICA Y DE MOBILIARIO DE AULA Y DE AULA DE EDUCACION PRIMARIA, EN EL(LA) 11015 COMANDANTE ELIAS AGUIRRE - CHICLAYO, DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    4,748,912
+                                    131,926
                                 </td>
                                 <td>
-                                    8,685,970
+                                    0
                                 </td>
                                 <td>
-                                    7,941,840
+                                    0
                                 </td>
                                 <td>
-                                    7,749,801
+                                    0
                                 </td>
                                 <td>
-                                    3,699,684
+                                    0
                                 </td>
                                 <td>
-                                    2,873,875
+                                    0
                                 </td>
                                 <td>
-                                    2,811,530
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    33.1
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr23" onclick='kCod="301235";tr_clk(23, this)'
+                            <tr class="alt" id="tr21" onclick='kCod="2519914";tr_clk(21, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140204-301235: MUNICIPALIDAD DISTRITAL DE MANUEL ANTONIO MESONES MURO
+                                    2519914: RENOVACION DE VEREDA; ADQUISICION DE MOBILIARIO URBANO; EN EL(LA) AVENIDA BALTA ENTRE LA AV. PEDRO RUIZ Y LA AV. GARCILASO DE LA VEGA DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    888,814
+                                    322,189
                                 </td>
                                 <td>
-                                    2,429,360
+                                    0
                                 </td>
                                 <td>
-                                    786,023
+                                    0
                                 </td>
                                 <td>
-                                    786,023
+                                    0
                                 </td>
                                 <td>
-                                    786,023
+                                    0
                                 </td>
                                 <td>
-                                    714,483
+                                    0
                                 </td>
                                 <td>
-                                    714,483
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    29.4
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr24" onclick='kCod="301236";tr_clk(24, this)'
+                            <tr class="alt" id="tr22" onclick='kCod="2522186";tr_clk(22, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140205-301236: MUNICIPALIDAD DISTRITAL DE PITIPO
+                                    2522186: MEJORAMIENTO DE LA TRANSITABILIDAD VEHICULAR Y PEATONAL EN EL PUEBLO JOVEN SAN NICOLAS DEL DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    1,847,789
+                                    0
                                 </td>
                                 <td>
-                                    15,822,077
+                                    736,916
                                 </td>
                                 <td>
-                                    14,159,788
+                                    0
                                 </td>
                                 <td>
-                                    7,350,005
+                                    0
                                 </td>
                                 <td>
-                                    4,796,995
+                                    0
                                 </td>
                                 <td>
-                                    4,753,370
+                                    0
                                 </td>
                                 <td>
-                                    4,675,909
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    30.0
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr25" onclick='kCod="301237";tr_clk(25, this)'
+                            <tr class="alt" id="tr23" onclick='kCod="2524615";tr_clk(23, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140206-301237: MUNICIPALIDAD DISTRITAL DE PUEBLO NUEVO
+                                    2524615: REHABILITACION DEL LOCAL ESCOLAR 11016 JUAN MEJIA BACA CON CODIGO LOCAL 275848, P.J. JOSE OLAYA - DISTRITO Y PROVINCIA DE CHICLAYO - DEPARTAMENTO LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    1,266,878
+                                    180,112
                                 </td>
                                 <td>
-                                    5,555,641
+                                    5,039,221
                                 </td>
                                 <td>
-                                    4,434,490
+                                    5,039,220
                                 </td>
                                 <td>
-                                    2,945,242
+                                    5,039,220
                                 </td>
                                 <td>
-                                    2,945,242
+                                    4,986,146
                                 </td>
                                 <td>
-                                    1,322,476
+                                    4,986,146
                                 </td>
                                 <td>
-                                    1,322,476
+                                    4,986,146
                                 </td>
                                 <td>&nbsp;
-                                    23.8
+                                    98.9
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr26" onclick='kCod="301238";tr_clk(26, this)'
+                            <tr class="alt" id="tr24" onclick='kCod="2539138";tr_clk(24, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140301-301238: MUNICIPALIDAD PROVINCIAL DE LAMBAYEQUE
+                                    2539138: REHABILITACION DEL LOCAL ESCOLAR N°10022 MIGUEL MURO ZAPATA CON CODIGO LOCAL 275725, URBANIZACION SAN EDUARDO, DISTRITO DE CHICLAYO, PROVINCIA DE CHICLAYO, DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    28,913,173
+                                    0
                                 </td>
                                 <td>
-                                    58,865,866
+                                    2,882,070
                                 </td>
                                 <td>
-                                    51,461,517
+                                    2,679,622
                                 </td>
                                 <td>
-                                    36,813,818
+                                    2,646,733
                                 </td>
                                 <td>
-                                    15,667,016
+                                    2,617,597
                                 </td>
                                 <td>
-                                    14,807,475
+                                    2,617,597
                                 </td>
                                 <td>
-                                    13,840,800
+                                    2,514,224
                                 </td>
                                 <td>&nbsp;
-                                    25.2
+                                    90.8
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr27" onclick='kCod="301239";tr_clk(27, this)'
+                            <tr class="alt" id="tr25" onclick='kCod="2539924";tr_clk(25, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140302-301239: MUNICIPALIDAD DISTRITAL DE CHOCHOPE
+                                    2539924: MEJORAMIENTO DE LOS SERVICIO DE AGUA POTABLE Y ALCANTARILLADO EN LA UPIS CRUZ DE LA ESPERANZA DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    347,335
+                                    2,263,759
                                 </td>
                                 <td>
-                                    1,743,722
+                                    0
                                 </td>
                                 <td>
-                                    1,487,089
+                                    0
                                 </td>
                                 <td>
-                                    928,236
+                                    0
                                 </td>
                                 <td>
-                                    928,236
+                                    0
                                 </td>
                                 <td>
-                                    928,236
+                                    0
                                 </td>
                                 <td>
-                                    925,236
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    53.2
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr28" onclick='kCod="301240";tr_clk(28, this)'
+                            <tr class="alt" id="tr26" onclick='kCod="2540967";tr_clk(26, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140303-301240: MUNICIPALIDAD DISTRITAL DE ILLIMO
+                                    2540967: MEJORAMIENTO DEL SERVICIO DE AGUA POTABLE Y ALCANTARILLADO DEL PUEBLO JOVEN LA PRIMAVERA DEL DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    7,574,242
+                                    2,890,520
                                 </td>
                                 <td>
-                                    22,260,573
+                                    0
                                 </td>
                                 <td>
-                                    21,167,930
+                                    0
                                 </td>
                                 <td>
-                                    18,091,449
+                                    0
                                 </td>
                                 <td>
-                                    7,292,186
+                                    0
                                 </td>
                                 <td>
-                                    6,466,859
+                                    0
                                 </td>
                                 <td>
-                                    6,364,000
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    29.1
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr29" onclick='kCod="301241";tr_clk(29, this)'
+                            <tr class="alt" id="tr27" onclick='kCod="2544985";tr_clk(27, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140304-301241: MUNICIPALIDAD DISTRITAL DE JAYANCA
+                                    2544985: RECONSTRUCCION DEL TRAMO 1-1233 -AVENIDA TARAPACA Y EL TRAMO 1-1235-AVENIDA TARAPACA TRAMO DESDE CA. VICENTE DE LA VEGA HASTA CA. FRANSISCO CABRERA, DISTRITO DE CHICLAYO, PROVINCIA DE CHICLAYO, DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    5,422,809
+                                    60,740
                                 </td>
                                 <td>
-                                    7,844,324
+                                    60,740
                                 </td>
                                 <td>
-                                    6,092,503
+                                    5,865
                                 </td>
                                 <td>
-                                    6,092,501
+                                    5,865
                                 </td>
                                 <td>
-                                    4,162,539
+                                    5,865
                                 </td>
                                 <td>
-                                    3,795,196
+                                    5,865
                                 </td>
                                 <td>
-                                    3,709,667
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    48.4
+                                    9.7
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr30" onclick='kCod="301242";tr_clk(30, this)'
+                            <tr class="alt" id="tr28" onclick='kCod="2551462";tr_clk(28, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140305-301242: MUNICIPALIDAD DISTRITAL DE MOCHUMI
+                                    2551462: MEJORAMIENTO DE LOS SERVICIOS DE AGUA POTABLE Y ALCANTARILLADO EN LA URBANIZACION PRIMAVERA I Y II DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    5,027,529
+                                    4,649
                                 </td>
                                 <td>
-                                    13,992,323
+                                    4,649
                                 </td>
                                 <td>
-                                    12,621,102
+                                    0
                                 </td>
                                 <td>
-                                    4,441,543
+                                    0
                                 </td>
                                 <td>
-                                    4,418,143
+                                    0
                                 </td>
                                 <td>
-                                    4,071,568
+                                    0
                                 </td>
                                 <td>
-                                    4,070,051
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    29.1
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr31" onclick='kCod="301243";tr_clk(31, this)'
+                            <tr class="alt" id="tr29" onclick='kCod="2556833";tr_clk(29, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140306-301243: MUNICIPALIDAD DISTRITAL DE MORROPE
+                                    2556833: MEJORAMIENTO DEL SERVICIO DE AGUA POTABLE Y ALCANTARILLADO DE LA URB. 03 DE OCTUBRE Y URB. SANTA LILA DEL DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    8,609,506
+                                    3,409,892
                                 </td>
                                 <td>
-                                    22,811,252
+                                    0
                                 </td>
                                 <td>
-                                    17,989,797
+                                    0
                                 </td>
                                 <td>
-                                    5,530,094
+                                    0
                                 </td>
                                 <td>
-                                    5,454,983
+                                    0
                                 </td>
                                 <td>
-                                    3,569,741
+                                    0
                                 </td>
                                 <td>
-                                    3,492,163
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    15.6
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr32" onclick='kCod="301244";tr_clk(32, this)'
+                            <tr class="alt" id="tr30" onclick='kCod="2566052";tr_clk(30, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140307-301244: MUNICIPALIDAD DISTRITAL DE MOTUPE
+                                    2566052: MEJORAMIENTO DE LOS SERVICIOS DE AGUA POTABLE Y ALCANTARILLADO DE LOTIZACION PATAZCA DEL DISTRITO DE CHICLAYO - PROVINCIA DE CHICLAYO - DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    7,087,545
+                                    5,501,692
                                 </td>
                                 <td>
-                                    11,408,581
+                                    0
                                 </td>
                                 <td>
-                                    9,046,144
+                                    0
                                 </td>
                                 <td>
-                                    6,607,568
+                                    0
                                 </td>
                                 <td>
-                                    6,574,876
+                                    0
                                 </td>
                                 <td>
-                                    4,750,103
+                                    0
                                 </td>
                                 <td>
-                                    4,750,053
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    41.6
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr33" onclick='kCod="301245";tr_clk(33, this)'
+                            <tr class="alt" id="tr31" onclick='kCod="2644850";tr_clk(31, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140308-301245: MUNICIPALIDAD DISTRITAL DE OLMOS
+                                    2644850: MEJORAMIENTO DEL SERVICIO DE PRACTICA DEPORTIVA Y/O RECREATIVA EN LA LOSA DEPORTIVA DEL PUEBLO JOVEN SIMON BOLIVAR DEL DISTRITO DE CHICLAYO DE LA PROVINCIA DE CHICLAYO DEL DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    15,524,602
+                                    2,026,705
                                 </td>
                                 <td>
-                                    43,278,262
+                                    43,880
                                 </td>
                                 <td>
-                                    28,109,125
+                                    0
                                 </td>
                                 <td>
-                                    9,882,869
+                                    0
                                 </td>
                                 <td>
-                                    8,387,728
+                                    0
                                 </td>
                                 <td>
-                                    6,571,374
+                                    0
                                 </td>
                                 <td>
-                                    6,450,647
+                                    0
                                 </td>
                                 <td>&nbsp;
-                                    15.2
+                                    0.0
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr34" onclick='kCod="301246";tr_clk(34, this)'
+                            <tr class="alt" id="tr32" onclick='kCod="2650080";tr_clk(32, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140309-301246: MUNICIPALIDAD DISTRITAL DE PACORA
+                                    2650080: MEJORAMIENTO DEL SERVICIO DE ALCANTARILLADO EN LA URBANIZACION EL AMAUTA DEL DISTRITO DE CHICLAYO DE LA PROVINCIA DE CHICLAYO DEL DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    777,079
+                                    0
                                 </td>
                                 <td>
-                                    6,688,276
+                                    1,544,195
                                 </td>
                                 <td>
-                                    464,384
+                                    1,544,194
                                 </td>
                                 <td>
-                                    418,872
+                                    1,544,194
                                 </td>
                                 <td>
-                                    411,109
+                                    1,413,466
                                 </td>
                                 <td>
-                                    411,109
+                                    1,413,466
                                 </td>
                                 <td>
-                                    411,109
+                                    1,413,466
                                 </td>
                                 <td>&nbsp;
-                                    6.1
+                                    91.5
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr35" onclick='kCod="301247";tr_clk(35, this)'
+                            <tr class="alt" id="tr33" onclick='kCod="2701154";tr_clk(33, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140310-301247: MUNICIPALIDAD DISTRITAL DE SALAS
+                                    2701154: MEJORAMIENTO DEL SERVICIO DE MOVILIDAD URBANA EN LA AVENIDA JOSE QUIÑONES GONZALES DESDE LA CALLE VICENTE LA VEGA HASTA LA AVENIDA NICOLAS DE PIEROLA DISTRITO DE CHICLAYO DE LA PROVINCIA DE CHICLAYO DEL DEPARTAMENTO DE LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    1,640,131
+                                    0
                                 </td>
                                 <td>
-                                    10,172,224
+                                    7,143,012
                                 </td>
                                 <td>
-                                    9,367,582
+                                    6,651,390
                                 </td>
                                 <td>
-                                    8,386,116
+                                    6,402,389
                                 </td>
                                 <td>
-                                    8,221,220
+                                    4,264,323
                                 </td>
                                 <td>
-                                    6,545,410
+                                    4,258,323
                                 </td>
                                 <td>
-                                    5,927,752
+                                    4,258,323
                                 </td>
                                 <td>&nbsp;
-                                    64.3
+                                    59.6
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr36" onclick='kCod="301248";tr_clk(36, this)'
+                            <tr class="alt" id="tr34" onclick='kCod="2701220";tr_clk(34, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140311-301248: MUNICIPALIDAD DISTRITAL DE SAN JOSE
+                                    2701220: REPARACION DE PISTA Y VEREDA; EN EL(LA) CALLES IQUITOS, SARGENTO LORESS, CALLE 18 Y CALLE HUALLAGA DE LA URBANIZACION QUIÑONES DEL DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    1,829,512
+                                    0
                                 </td>
                                 <td>
-                                    5,147,063
+                                    2,946,385
                                 </td>
                                 <td>
-                                    2,708,900
+                                    2,773,237
                                 </td>
                                 <td>
-                                    2,168,544
+                                    2,773,237
                                 </td>
                                 <td>
-                                    1,905,511
+                                    1,120,792
                                 </td>
                                 <td>
-                                    1,772,531
+                                    1,095,792
                                 </td>
                                 <td>
-                                    1,686,479
+                                    1,095,792
                                 </td>
                                 <td>&nbsp;
-                                    34.4
+                                    37.2
                                 </td>
                             </tr>
                             
                         
-                            <tr class="alt" id="tr37" onclick='kCod="301249";tr_clk(37, this)'
+                            <tr class="alt" id="tr35" onclick='kCod="2701265";tr_clk(35, this)'
                                 onmouseover="tr_over(this)" onmouseout="tr_out(this)">
                                 
                                 <td align="left">
-                                    140312-301249: MUNICIPALIDAD DISTRITAL DE TUCUME
+                                    2701265: REPARACION DE PISTA Y VEREDA; EN EL(LA) CALLE ANDALUCIA, CALLE CADIZ, CALLE MANCO CAPAC, CALLE PEDRO RUIZ, CALLE CORDOVA Y CALLE TOLEDO EN LA URBANIZACION SAN JUAN DEL DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
                                     
                                 </td>
                                 <td>
-                                    5,771,237
+                                    0
                                 </td>
                                 <td>
-                                    9,589,854
+                                    5,875,751
                                 </td>
                                 <td>
-                                    7,138,900
+                                    5,858,750
                                 </td>
                                 <td>
-                                    3,576,743
+                                    5,858,750
                                 </td>
                                 <td>
-                                    3,576,743
+                                    3,100,514
                                 </td>
                                 <td>
-                                    3,247,600
+                                    3,081,014
                                 </td>
                                 <td>
-                                    3,247,599
+                                    2,608,968
                                 </td>
                                 <td>&nbsp;
-                                    33.9
+                                    52.4
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr36" onclick='kCod="2702788";tr_clk(36, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    2702788: REPARACION DE PISTA Y VEREDA; EN EL(LA) CALLE AREQUIPA NORTE, LA CALLE FRANCISCO CUNEO, CALLE MANUEL ARTEAGA Y JIRON PUNO EN EL DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
+                                    
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    45,329
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>&nbsp;
+                                    0.0
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr37" onclick='kCod="2712476";tr_clk(37, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    2712476: REMODELACION DE COBERTURA; EN EL(LA) MERCADO MODELO DISTRITO DE CHICLAYO, PROVINCIA CHICLAYO, DEPARTAMENTO LAMBAYEQUE
+                                    
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    1,895,215
+                                </td>
+                                <td>
+                                    1,726,240
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>&nbsp;
+                                    0.0
                                 </td>
                             </tr>
                             
