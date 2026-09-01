@@ -623,8 +623,8 @@ function renderB8() {
         vari=`<div class="hist-var" style="color:${col}">${sym} ${Math.abs(delta).toFixed(1)}% vs ${a-1}</div>`;
       }
       return `<div class="hist-card ${es2026?"cur":""}">
-        <div class="hist-label">${a}${es2026?" · Acum.":" · Ene–Sep"}</div>
-        <div class="hist-val">${fmtCompacto(v)}</div>
+        <div class="hist-label">${a}${es2026?" · Acum.":" · Ene–Set"}</div>
+        <div class="hist-val">${fmtNum(v)}</div>
         ${vari}
       </div>`;
     }).join("");
@@ -649,7 +649,7 @@ function renderB8() {
         ctx.fillStyle=labelColors[i];
         ctx.font="bold 11px 'Barlow Condensed',sans-serif";
         ctx.textAlign="center";
-        ctx.fillText(fmtCompacto(val),bar.x,bar.y-6);
+        ctx.fillText(fmtNum(val),bar.x,bar.y-6);
       });
       ctx.restore();
     }
