@@ -395,6 +395,33 @@ main{padding:20px 0 60px}
 .hist-var{font-size:10.5px;margin-top:2px}
 .chart-wrap{flex:1;position:relative;min-height:200px}
 
+/* ── Bloque 9: comparativo anual Devengado/PIM (2 líneas) ── */
+#b9bloque{min-height:820px}
+.hist-panel{
+  display:flex;flex-direction:column;gap:6px;flex:1;min-height:0
+}
+.hist-panel-tag{
+  display:inline-flex;align-items:center;
+  font-family:"Barlow Condensed",system-ui,sans-serif;
+  font-size:12px;font-weight:800;letter-spacing:.06em;
+  color:#fff;padding:4px 12px;border-radius:5px;
+  width:fit-content;flex:0 0 auto
+}
+.hist-panel-tag.dev{background:var(--rojo-osc)}
+.hist-panel-tag.pim{background:var(--dorado-osc)}
+.hist-panel-head{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;flex:0 0 auto
+}
+.hist-legend{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hist-legend-item{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:"Barlow",system-ui,sans-serif;
+  font-size:12px;font-weight:700;color:var(--texto)
+}
+.hist-legend-item i{
+  display:inline-block;width:10px;height:10px;border-radius:50%;flex:0 0 auto
+}
+
 /* ════════════════════════════════════════════════════
    NOTAS
 ════════════════════════════════════════════════════ */
@@ -1113,6 +1140,50 @@ main{padding:20px 0 60px}
     </div>
     <div class="slide-footer">
       <span class="sf-fuente">Fuente: Consulta Amigable MEF 2021–2025: acumulado Ene–Set extraído de registros históricos · 2026: acumulado diario</span>
+      <span class="sf-logo">MPCH · EGRESOS 2026</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SLIDE 9 — COMPARATIVO HISTÓRICO ANUAL (DEVENGADO / PIM)
+  ══════════════════════════════════════ -->
+  <div class="slide" id="b9bloque">
+    <div class="slide-header">
+      <div class="slide-titulo"><span class="slide-num">09</span>Ejecución Presupuestal de Inversiones</div>
+    </div>
+    <div class="slide-subband">
+      <span class="sb-label">Comparativo Histórico de Enero — Diciembre — Municipalidad Provincial de Chiclayo</span>
+      <span class="sb-fecha" id="sb9fecha">—</span>
+    </div>
+    <div class="slide-body">
+      <div class="nota-bloque" id="b9nota">El año 2026 se actualiza en tiempo real: Devengado S/ ----,----,--- · PIM S/ ---,---,---. Los datos 2016–2025 provienen de registros históricos de la Consulta Amigable MEF.</div>
+      <div class="hist-panel">
+        <div class="hist-panel-head">
+          <div class="hist-panel-tag dev">Devengado</div>
+          <div class="hist-legend">
+            <span class="hist-legend-item"><i style="background:var(--rojo-osc)"></i>Devengado Real</span>
+            <span class="hist-legend-item"><i style="background:var(--rojo)"></i>Devengado 2026 (a la fecha)</span>
+            <span class="hist-legend-item"><i style="background:var(--dorado-osc)"></i>Proyección Dic 2026</span>
+          </div>
+        </div>
+        <div class="chart-wrap" style="min-height:230px">
+          <canvas id="b9chartDev"></canvas>
+        </div>
+      </div>
+      <div class="hist-panel">
+        <div class="hist-panel-head">
+          <div class="hist-panel-tag pim">PIM</div>
+          <div class="hist-legend">
+            <span class="hist-legend-item"><i style="background:var(--dorado-osc)"></i>PIM</span>
+          </div>
+        </div>
+        <div class="chart-wrap" style="min-height:230px">
+          <canvas id="b9chartPim"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="sf-fuente">Fuente: Consulta Amigable MEF</span>
       <span class="sf-logo">MPCH · EGRESOS 2026</span>
     </div>
   </div>

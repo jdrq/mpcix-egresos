@@ -43,10 +43,36 @@ function fechaHoy() {
 function rellenarFechas() {
   const f = fechaHoy();
   ["sb1fecha","sb2fecha","sb3fecha","sb4fecha",
-   "sb5fecha","sb6fecha","sb7fecha","sb8fecha"].forEach(id=>{
+   "sb5fecha","sb6fecha","sb7fecha","sb8fecha","sb9fecha"].forEach(id=>{
     const el=$(id); if(el) el.textContent=f;
   });
 }
+// ── Proyección lineal (run-rate) a fin de año ──────────────────
+// MEF no publica una proyección oficial de cierre, así que se estima
+// por regla de tres simple: (devengado acumulado a la fecha / día del
+// año transcurrido) * total de días del año.
+// LIMITACIÓN CONOCIDA (explicar a la jefatura si se usa esta cifra):
+// el gasto público en Perú NO es lineal durante el año — históricamente
+// se acelera en el último trimestre (cierre presupuestal). Una
+// proyección lineal simple tiende a SUBESTIMAR el cierre real de
+// diciembre. Sirve como piso conservador para el MVP; una mejora
+// futura es ponderarla con la curva de ejecución mensual histórica
+// 2016–2025 en vez de asumir ritmo constante.
+function diaDelAnioActual() {
+  const d = new Date();
+  const inicio = new Date(d.getFullYear(), 0, 1);
+  return Math.floor((d - inicio) / 86400000) + 1;
+}
+function diasEnAnio(anio) {
+  return ((anio % 4 === 0 && anio % 100 !== 0) || anio % 400 === 0) ? 366 : 365;
+}
+function proyeccionLineal(valorActual) {
+  if (valorActual === null || valorActual === undefined || valorActual <= 0) return null;
+  const anio = new Date().getFullYear();
+  const dia = diaDelAnioActual();
+  return valorActual * (diasEnAnio(anio) / dia);
+}
+
 function semaforo(pct) {
   if (pct===null) return "#888";
   if (pct>=70) return "var(--verde)";
@@ -69,6 +95,8 @@ let datos = {};
 let cargados = new Set();
 let b8ChartInstance = null;
 let B8_HIST = {};
+let B9_HIST = {};
+let b9DevChart = null, b9PimChart = null;
 let donutInstances = {};
 
 const ARCHIVOS_ESPERADOS = [
@@ -204,7 +232,7 @@ function render() {
   });
   rellenarFechas();
   renderB1(); renderB2(); renderB3(); renderB4();
-  renderB5(); renderB6(); renderB7(); renderB8();
+  renderB5(); renderB6(); renderB7(); renderB8(); renderB9();
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -678,6 +706,179 @@ function renderB8() {
   });
 }
 
+// ══════════════════════════════════════════════════════════════
+// B9 — Comparativo histórico anual Devengado/PIM (Ene–Dic, 2016–2026)
+// ══════════════════════════════════════════════════════════════
+// dir: "auto" (detecta valle/pico comparando con vecinos del mismo
+// dataset), "arriba" o "abajo" (fuerza el lado, para puntos ancla
+// donde el auto-detect no aplica, p.ej. los dos puntos apilados de
+// 2026 actual/proyección).
+function makeLineLabelsPlugin(datasetsCfg) {
+  return {
+    id: "lineValueLabels",
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart; ctx.save();
+      ctx.font = "800 13px 'Barlow Condensed',sans-serif";
+      ctx.textAlign = "center";
+      chart.data.datasets.forEach((ds, di) => {
+        const cfg = datasetsCfg[di]; if (!cfg) return;
+        const meta = chart.getDatasetMeta(di);
+        cfg.indices.forEach(i => {
+          const val = ds.data[i];
+          if (val === null || val === undefined) return;
+          const pt = meta.data[i]; if (!pt) return;
+          let dir = cfg.dir;
+          if (dir === "auto") {
+            const prev = ds.data[i - 1], next = ds.data[i + 1];
+            const esValle = (prev != null && val < prev) && (next != null && val < next);
+            dir = esValle ? "abajo" : "arriba";
+          }
+          ctx.textBaseline = dir === "abajo" ? "top" : "alphabetic";
+          ctx.fillStyle = cfg.color;
+          ctx.fillText(fmtCompacto(val), pt.x, pt.y + (dir === "abajo" ? 12 : -10));
+        });
+      });
+      ctx.restore();
+    }
+  };
+}
+
+function renderB9() {
+  const años = Object.keys(B9_HIST).map(Number).sort((a, b) => a - b);
+  if (!años.length) return; // sin data/historico_anual_chiclayo.json aún
+
+  const dev2026 = datos.rubro ? datos.rubro.dev : null;
+  const pim2026 = datos.rubro ? datos.rubro.pim : null;
+  const devProy2026 = proyeccionLineal(dev2026);
+
+  // Índices del eje X: 0..N-1 = años históricos, N = 2026 (única
+  // posición para el año actual). El punto "Devengado 2026 (a la
+  // fecha)" y el punto "Proyección Dic 2026" comparten la MISMA
+  // columna X — la proyección va apilada ARRIBA del valor actual,
+  // no desplazada al costado.
+  const IDX_2026 = años.length;
+  const labels = [...años.map(String), "2026"];
+  const nula = () => new Array(labels.length).fill(null);
+
+  // Nota superior con valores en vivo (guiones si aún no se cargó rubro.xls)
+  const notaEl = $("b9nota");
+  if (notaEl) {
+    notaEl.innerHTML = `El año 2026 se actualiza en tiempo real: Devengado S/ ${dev2026 !== null ? fmtN(dev2026) : "----,----,---"} · PIM S/ ${pim2026 !== null ? fmtN(pim2026) : "---,---,---"}. Los datos 2016–2025 provienen de registros históricos de la Consulta Amigable MEF.`;
+  }
+
+  // ── Gráfico Devengado (3 series) ──────────────────────────────
+  // Las 3 ramas nacen del punto 2025 y convergen en la columna 2026:
+  // "Devengado Real" llega hasta 2025; desde ahí se bifurcan
+  // "Devengado 2026 (a la fecha)" (abajo) y "Proyección Dic 2026"
+  // (arriba), ambas en x=IDX_2026.
+  const devReal = nula(), dev2026Linea = nula(), devProyLinea = nula();
+  años.forEach((a, i) => { devReal[i] = B9_HIST[a].dev; });
+  const ultimoRealDev = años.length ? B9_HIST[años[años.length - 1]].dev : null;
+  if (ultimoRealDev !== null) dev2026Linea[años.length - 1] = ultimoRealDev;   // ancla en 2025
+  if (dev2026 !== null) dev2026Linea[IDX_2026] = dev2026;
+  if (ultimoRealDev !== null) devProyLinea[años.length - 1] = ultimoRealDev;   // ancla en 2025 (misma bifurcación)
+  if (devProy2026 !== null) devProyLinea[IDX_2026] = devProy2026;
+
+  const canvasDev = $("b9chartDev");
+  if (canvasDev) {
+    if (b9DevChart) { b9DevChart.destroy(); b9DevChart = null; }
+    const dsReal = {
+      label: "Devengado Real", data: devReal,
+      borderColor: "#1f5f91", backgroundColor: "#1f5f91", pointBackgroundColor: "#1f5f91",
+      borderWidth: 2.5, tension: .25, spanGaps: false,
+      pointRadius: ctx => (ctx.dataIndex < años.length ? 4 : 0),
+    };
+    const ds2026 = {
+      label: "Devengado 2026 (a la fecha)", data: dev2026Linea,
+      borderColor: "#2B80C1", backgroundColor: "#2B80C1", pointBackgroundColor: "#2B80C1",
+      borderWidth: 2.5, tension: 0, spanGaps: true,
+      pointRadius: ctx => (ctx.dataIndex === IDX_2026 ? 5 : 0),
+    };
+    const dsProy = {
+      label: "Proyección Dic 2026", data: devProyLinea,
+      borderColor: "#d9a000", backgroundColor: "#d9a000", pointBackgroundColor: "#d9a000",
+      borderWidth: 2, borderDash: [6, 4], tension: 0, spanGaps: true,
+      pointRadius: ctx => (ctx.dataIndex === IDX_2026 ? 5 : 0),
+    };
+    const labelsPlugin = makeLineLabelsPlugin({
+      0: { indices: años.map((_, i) => i), color: "#164569", dir: "auto" },
+      1: { indices: [IDX_2026], color: "#1f5f91", dir: "abajo" },
+      2: { indices: [IDX_2026], color: "#92400e", dir: "arriba" }
+    });
+    b9DevChart = new Chart(canvasDev, {
+      type: "line",
+      data: { labels, datasets: [dsReal, ds2026, dsProy] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        layout: { padding: { top: 18, bottom: 6, right: 46, left: 4 } },
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            // En la columna 2025, dsReal/ds2026/dsProy comparten el mismo
+            // valor porque ds2026 y dsProy anclan ahí para poder bifurcar
+            // la línea — sin este filtro el tooltip mostraría "Devengado
+            // Real", "Devengado 2026" y "Proyección" repetidos con el
+            // mismo número. Solo se listan los datasets 2026/Proyección
+            // cuando el punto es el suyo propio (columna 2026).
+            filter: item => item.datasetIndex === 0 || item.dataIndex === IDX_2026,
+            callbacks: { label: ctx => ctx.dataset.label + ": " + fmtNum(ctx.parsed.y) }
+          }
+        },
+        scales: {
+          x: { offset: true, grid: { display: false }, ticks: {
+            font: { family: "'Barlow Condensed',sans-serif", size: 11, weight: "600" }, color: "#374151" } },
+          y: { grid: { color: "#f3f4f6" }, ticks: {
+            color: "#6b7280", font: { family: "Barlow,sans-serif", size: 10 }, callback: v => fmtCompacto(v) } }
+        }
+      },
+      plugins: [labelsPlugin]
+    });
+  }
+
+  // ── Gráfico PIM (1 sola serie, sin proyección) ────────────────
+  // El PIM es un techo presupuestal, no un flujo: se muestra solo el
+  // valor real acumulado a la fecha en 2026, sin tramo punteado ni
+  // punto flotante proyectado.
+  const pimSerie = nula();
+  años.forEach((a, i) => { pimSerie[i] = B9_HIST[a].pim; });
+  if (pim2026 !== null) pimSerie[IDX_2026] = pim2026;
+
+  const canvasPim = $("b9chartPim");
+  if (canvasPim) {
+    if (b9PimChart) { b9PimChart.destroy(); b9PimChart = null; }
+    const dsPim = {
+      label: "PIM", data: pimSerie,
+      borderColor: "#d9a000", backgroundColor: "#FFC526", pointBackgroundColor: "#d9a000",
+      borderWidth: 2.5, tension: .25, spanGaps: false,
+      pointRadius: 4,
+    };
+    const labelsPluginPim = makeLineLabelsPlugin({
+      0: { indices: [...años.map((_, i) => i), IDX_2026], color: "#92400e", dir: "auto" }
+    });
+    b9PimChart = new Chart(canvasPim, {
+      type: "line",
+      data: { labels, datasets: [dsPim] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        layout: { padding: { top: 18, bottom: 6, right: 46, left: 4 } },
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => "PIM: " + fmtNum(ctx.parsed.y) } }
+        },
+        scales: {
+          x: { offset: true, grid: { display: false }, ticks: {
+            font: { family: "'Barlow Condensed',sans-serif", size: 11, weight: "600" }, color: "#374151" } },
+          y: { grid: { color: "#f3f4f6" }, ticks: {
+            color: "#6b7280", font: { family: "Barlow,sans-serif", size: 10 }, callback: v => fmtCompacto(v) } }
+        }
+      },
+      plugins: [labelsPluginPim]
+    });
+  }
+}
+
 // ── Eventos ───────────────────────────────────────────────────
 document.getElementById("dropzone").addEventListener("click",()=>document.getElementById("file").click());
 document.getElementById("dropzone").addEventListener("keydown",e=>{
@@ -775,5 +976,10 @@ fetch("data/historico_egresos.json?"+Date.now())
   .then(r=>r.json())
   .then(data=>{B8_HIST=data;renderB8();})
   .catch(()=>console.warn("[MPCH-EG] historico_egresos.json no encontrado"));
+
+fetch("data/historico_anual_chiclayo.json?"+Date.now())
+  .then(r=>r.json())
+  .then(data=>{B9_HIST=data;renderB9();})
+  .catch(()=>console.warn("[MPCH-EG] historico_anual_chiclayo.json no encontrado"));
 
 autoCargar();
