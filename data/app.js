@@ -715,16 +715,28 @@ function renderB7() {
 // ══════════════════════════════════════════════════════════════
 // B8 — Histórico acumulado Ene–Oct (diseño mejorado)
 // ══════════════════════════════════════════════════════════════
+// Ene–Oct por año: historico_egresos.json manda (2019–2025); los años
+// anteriores (2015–2018) se completan con data/ranking_historico.json.
+function b8Serie() {
+  const h={...(B8_HIST||{})};
+  const m=(B2_HIST&&B2_HIST.muni)||{};
+  Object.keys(m).forEach(a=>{ if(h[a]===undefined && m[a] && m[a].dev!=null) h[a]=m[a].dev; });
+  return h;
+}
+
 function renderB8() {
-  const años=Object.keys(B8_HIST).map(Number).sort();
+  const hist=b8Serie();
+  const años=Object.keys(hist).map(Number).sort((a,b)=>a-b);
+  const pie=$("b8pie"); if(pie) pie.textContent=`Fuente: Consulta Amigable MEF ${años[0]||2019}–2025: acumulado Ene–Oct extraído de registros históricos · 2026: acumulado diario`;
   const dev2026=datos.rubro?datos.rubro.dev:null;
   if(dev2026!==null) años.push(2026);
   const IDX_2026=años.length-1;
-  const valores=años.map(a=>a===2026?dev2026:(B8_HIST[a]??0));
+  const valores=años.map(a=>a===2026?dev2026:(hist[a]??0));
 
   // KPI cards
   const kpiWrap=$("b8kpis");
   if(kpiWrap) {
+    kpiWrap.classList.toggle("compacto", años.length>8);
     kpiWrap.innerHTML=años.map((a,i)=>{
       const v=valores[i], es2026=(a===2026);
       let vari="";
@@ -735,7 +747,7 @@ function renderB8() {
       }
       return `<div class="hist-card ${es2026?"cur":""}">
         <div class="hist-label">${a}${es2026?" · Acum.":" · Ene–Oct"}</div>
-        <div class="hist-val">${fmtNum(v)}</div>
+        <div class="hist-val">${años.length>8?fmtCompacto(v):fmtNum(v)}</div>
         ${vari}
       </div>`;
     }).join("");
@@ -760,7 +772,7 @@ function renderB8() {
         ctx.fillStyle=labelColors[i];
         ctx.font="bold 11px 'Barlow Condensed',sans-serif";
         ctx.textAlign="center";
-        ctx.fillText(fmtNum(val),bar.x,bar.y-6);
+        ctx.fillText(años.length>8?fmtCompacto(val):fmtNum(val),bar.x,bar.y-6);
       });
       ctx.restore();
     }
@@ -1067,7 +1079,7 @@ fetch("data/historico_anual_chiclayo.json?"+Date.now())
 
 fetch("data/ranking_historico.json?"+Date.now())
   .then(r=>{ if(!r.ok) throw 0; return r.json(); })
-  .then(data=>{B2_HIST=data;renderB2();})
+  .then(data=>{B2_HIST=data;renderB2();if(B8_HIST)renderB8();})
   .catch(()=>{ console.warn("[MPCH-EG] ranking_historico.json no encontrado"); renderB2(); });
 
 autoCargar();
