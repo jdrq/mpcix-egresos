@@ -42,7 +42,7 @@ function fechaHoy() {
 // Rellena todos los spans de fecha en los subbands
 function rellenarFechas() {
   const f = fechaHoy();
-  ["sb1fecha","sb2fecha","sb3fecha","sb4fecha",
+  ["sb1fecha","sb3fecha","sb4fecha",
    "sb5fecha","sb6fecha","sb7fecha","sb8fecha","sb9fecha"].forEach(id=>{
     const el=$(id); if(el) el.textContent=f;
   });
@@ -97,6 +97,7 @@ let b8ChartInstance = null;
 let B8_HIST = {};
 let B9_HIST = {};
 let b9DevChart = null, b9PimChart = null;
+let B2_HIST = null, b2Anio = null, b2Manual = false, b2Chart = null;
 let donutInstances = {};
 
 const ARCHIVOS_ESPERADOS = [
@@ -289,39 +290,121 @@ function renderB1() {
 // ══════════════════════════════════════════════════════════════
 // B2 — Ranking Departamental
 // ══════════════════════════════════════════════════════════════
-function renderB2() {
-  const d=datos.ranking, tbody=$("b2tbody");
-  if(!tbody) return;
-  if(!d){ tbody.innerHTML=`<tr><td colspan="6" class="vacio">Carga ranking.xls para ver los datos.</td></tr>`; return; }
+// Años anteriores: data/ranking_historico.json (lo genera
+//   scripts/generar_ranking_historico.py a partir de historicos/<año>/).
+// Año en curso: sale de xls/ranking.xls (acumulado diario).
+const B2_COD_MPCH = "140101";
 
-  const muns=d.registros.map(r=>{
-    const esMPL=r.desc.includes("140101-301212")||r.desc.toUpperCase().includes("PROVINCIAL DE CHICLAYO");
-    // Quitar código "140301-XXXXXX: " del inicio del nombre
-    let nombre=r.desc.replace(/^\d{6}-\d{6}:\s*/,"").replace(/^\d+-\d+:\s*/,"");
-    // Normalizar Ñ → N (encoding issues del MEF)
-    nombre=nombre.replace(/�/g,"N").replace(/Ñ/g,"N").replace(/ñ/g,"n");
-    return {...r,esMPL,nombre};
+// 1ero, 2do, 3ro, 4to … 10mo, 11mo, 12mo, 13ro … 21ro, 22do …
+function b2Ord(n) {
+  if(n===1) return "1ero";
+  if(n===10||n===11||n===12) return n+"mo";
+  const suf={1:"ro",2:"do",3:"ro",4:"to",5:"to",6:"to",7:"mo",8:"vo",9:"no",0:"mo"};
+  return n+suf[n%10];
+}
+
+function b2Nombre(s) {
+  return String(s).replace(/^\d{6}-\d{6}:\s*/,"").replace(/\uFFFD/g,"N");
+}
+
+// Devuelve {años:[...ordenados], lista:{año:[{pos,cod,nombre,dev}]}, actual:año|null}
+function b2Datos() {
+  if(!B2_HIST) return null;
+  const lista={}, años=[];
+  (B2_HIST["años"]||[]).forEach(a=>{
+    lista[a]=B2_HIST.ranking[String(a)].map(x=>({pos:x.pos,cod:x.cod,nombre:x.nombre,dev:x.dev}));
+    años.push(a);
   });
-  const sorted=[...muns].sort((a,b)=>(b.pct??-1)-(a.pct??-1));
-  const mpl=sorted.find(m=>m.esMPL);
-  const pos=mpl?sorted.indexOf(mpl)+1:null;
-  const porMonto=[...muns].sort((a,b)=>b.dev-a.dev);
-  const posMonto=mpl?porMonto.indexOf(mpl)+1:null;
+  let actual=null;
+  const reg=datos.ranking&&datos.ranking.registros;
+  if(reg&&reg.length){
+    actual=new Date().getFullYear();
+    // nombres con tilde/Ñ correctos tomados del histórico (misma municipalidad = mismo código)
+    const nomHist={};
+    años.forEach(a=>lista[a].forEach(x=>{nomHist[x.cod]=x.nombre;}));
+    const arr=reg.map(r=>{
+      const cod=((r.desc||"").match(/^(\d{6})-/)||[])[1]||"";
+      return {cod,nombre:nomHist[cod]||b2Nombre(r.desc||""),dev:r.dev||0};
+    }).sort((x,y)=>y.dev-x.dev||x.nombre.localeCompare(y.nombre));
+    let posPrev=0,devPrev=null;
+    arr.forEach((x,i)=>{ x.pos=(x.dev===devPrev)?posPrev:i+1; posPrev=x.pos; devPrev=x.dev; });
+    lista[actual]=arr;
+    if(!años.includes(actual)) años.push(actual);
+  }
+  años.sort((x,y)=>x-y);
+  return {años,lista,actual};
+}
 
-  // Bloque highlight eliminado por diseño
+function b2Sel(a) { b2Anio=a; b2Manual=true; renderB2(); }
 
-  tbody.innerHTML=sorted.map((m,i)=>{
-    const pos=i+1;
-    const posStyle=pos<=3?'style="color:var(--dorado-osc);font-weight:800"':'style="font-weight:700"';
-    return `<tr ${m.esMPL?'class="mpl-row"':''}>
-      <td class="ctr" ${posStyle}>${pos}°</td>
-      <td style="font-size:.95em;font-weight:${m.esMPL?700:600}">${m.nombre}</td>
-      <td class="num">${fmtNum(m.pia)}</td>
-      <td class="num">${fmtNum(m.pim)}</td>
-      <td class="num">${fmtNum(m.dev)}</td>
-      <td>${barraHTML(m.pct)}</td>
+function fechaLarga() {
+  const d=new Date(),
+    m=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","setiembre","octubre","noviembre","diciembre"],
+    ds=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+  return ds[d.getDay()]+", "+d.getDate()+" de "+m[d.getMonth()]+" de "+d.getFullYear();
+}
+
+function renderB2() {
+  const tbody=$("b2tbody"); if(!tbody) return;
+  const f=$("b2fechaTxt"); if(f) f.textContent=fechaLarga();
+  const D=b2Datos();
+  if(!D||!D.años.length){
+    tbody.innerHTML=`<tr><td colspan="4" class="vacio">Sin datos: genera data/ranking_historico.json con scripts/generar_ranking_historico.py</td></tr>`;
+    return;
+  }
+  const {años,lista,actual}=D;
+  // Abre en el año más reciente; solo respeta la elección si el usuario la hizo
+  if(!b2Manual||!años.includes(b2Anio)) b2Anio=años[años.length-1];
+  const filas=lista[b2Anio];
+
+  $("b2tabs").innerHTML=años.map(a=>
+    `<button type="button" class="rk-tab ${a===b2Anio?"on":""}" onclick="b2Sel(${a})">${a}</button>`).join("");
+  const nota=$("b2nota"); if(nota) nota.style.display=(b2Anio===actual)?"":"none";
+  const amb=$("b2ambito"); if(amb) amb.textContent="Ámbito: inversiones · "+filas.length+" municipalidades";
+
+  // Ranking por monto devengado
+  const max=Math.max(...filas.map(x=>x.dev),1);
+  tbody.innerHTML=filas.map(x=>{
+    const esMPL=x.cod===B2_COD_MPCH;
+    const w=Math.max(0,x.dev/max*100).toFixed(1);
+    return `<tr ${esMPL?'class="mpl-row"':''}>
+      <td class="ord">${b2Ord(x.pos)}</td>
+      <td style="font-size:.95em;font-weight:${esMPL?800:600}">${x.nombre}</td>
+      <td class="num">${fmtNum(x.dev)}</td>
+      <td><div class="rk-bar"><i style="width:${w}%"></i></div></td>
     </tr>`;
   }).join("");
+
+  // Gráfico lineal: devengado de la MPL, un punto por año (Ene–Oct)
+  const canvas=$("b2chart"); if(!canvas) return;
+  if(b2Chart){ b2Chart.destroy(); b2Chart=null; }
+  const serie=años.map(a=>{const m=lista[a].find(x=>x.cod===B2_COD_MPCH);return m?m.dev:null;});
+  const last=años.length-1, sel=años.indexOf(b2Anio);
+  b2Chart=new Chart(canvas,{
+    type:"line",
+    data:{
+      labels:años.map(a=>a===actual?a+" (año en curso)":"Ene-Oct "+a),
+      datasets:[{
+        data:serie,borderColor:"#1f5f91",backgroundColor:"rgba(31,95,145,.08)",fill:true,tension:.3,
+        borderWidth:2,
+        pointRadius:años.map((_,i)=>i===last?8:(i===sel?7:5)),
+        pointBackgroundColor:años.map((_,i)=>i===last&&actual?"#FFC526":"#1f5f91"),
+        pointBorderColor:"#1f5f91",pointBorderWidth:2
+      }]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:26,right:44,left:10}},
+      plugins:{legend:{display:false},
+        tooltip:{callbacks:{label:c=>"Devengado: "+fmtNum(c.parsed.y)}}},
+      scales:{
+        x:{grid:{display:false},ticks:{maxRotation:30,color:"#374151",font:{family:"'Barlow Condensed',sans-serif",size:12,weight:"600"}}},
+        y:{beginAtZero:true,grace:"12%",grid:{color:"#ece7e2"},
+           ticks:{color:"#6b7280",font:{family:"Barlow,sans-serif",size:11},callback:v=>fmtCompacto(v)}}
+      }
+    },
+    plugins:[makeLineLabelsPlugin([{indices:años.map((_,i)=>i),dir:"auto",color:"#164569"}])]
+  });
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -707,7 +790,7 @@ function renderB8() {
 }
 
 // ══════════════════════════════════════════════════════════════
-// B9 — Comparativo histórico anual Devengado/PIM (Ene–Dic, 2016–2026)
+// B9 — Comparativo histórico anual Devengado/PIM (Ene–Dic, 2015–2026)
 // ══════════════════════════════════════════════════════════════
 // dir: "auto" (detecta valle/pico comparando con vecinos del mismo
 // dataset), "arriba" o "abajo" (fuerza el lado, para puntos ancla
@@ -763,7 +846,7 @@ function renderB9() {
   // Nota superior con valores en vivo (guiones si aún no se cargó rubro.xls)
   const notaEl = $("b9nota");
   if (notaEl) {
-    notaEl.innerHTML = `El año 2026 se actualiza en tiempo real: Devengado S/ ${dev2026 !== null ? fmtN(dev2026) : "----,----,---"} · PIM S/ ${pim2026 !== null ? fmtN(pim2026) : "---,---,---"}. Los datos 2016–2025 provienen de registros históricos de la Consulta Amigable MEF.`;
+    notaEl.innerHTML = `El año 2026 se actualiza en tiempo real: Devengado S/ ${dev2026 !== null ? fmtN(dev2026) : "----,----,---"} · PIM S/ ${pim2026 !== null ? fmtN(pim2026) : "---,---,---"}. Los datos 2015–2025 provienen de registros históricos de la Consulta Amigable MEF.`;
   }
 
   // ── Gráfico Devengado (3 series) ──────────────────────────────
@@ -981,5 +1064,10 @@ fetch("data/historico_anual_chiclayo.json?"+Date.now())
   .then(r=>r.json())
   .then(data=>{B9_HIST=data;renderB9();})
   .catch(()=>console.warn("[MPCH-EG] historico_anual_chiclayo.json no encontrado"));
+
+fetch("data/ranking_historico.json?"+Date.now())
+  .then(r=>{ if(!r.ok) throw 0; return r.json(); })
+  .then(data=>{B2_HIST=data;renderB2();})
+  .catch(()=>{ console.warn("[MPCH-EG] ranking_historico.json no encontrado"); renderB2(); });
 
 autoCargar();
