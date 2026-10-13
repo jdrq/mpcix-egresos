@@ -16,7 +16,7 @@ Cada archivo trae SOLO el devengado de su periodo, por eso se SUMAN:
 (PIA y PIM vienen vacíos en estos archivos; no se usan.)
 
 PIM por año (opcional): si existe  anual_<año>.xls  (Ene–Dic, Sólo Proyectos, por
-Municipalidad) se lee su PIM y se guarda junto a cada municipalidad. El dashboard
+Municipalidad) se lee su PIA y PIM y se guardan junto a cada municipalidad. El dashboard
 calcula  Avance % = Devengado Ene–Oct / PIM anual.  El PIM es un valor "foto"
 (stock): NUNCA se suma entre archivos. Si falta el anual de un año, esa columna
 queda en "—" para ese año.
@@ -35,6 +35,7 @@ CONTROL = BASE / "data" / "historico_egresos.json"   # totales MPCH ya conocidos
 PERIODOS = [("1T", "Trimestre I:"), ("2T", "Trimestre II:"),
             ("3T", "Trimestre III:"), ("octubre", "Mes 10")]
 COD_MPCH = "140101"          # Municipalidad Provincial de Chiclayo
+IDX_PIA = 1
 IDX_PIM = 2
 IDX_DEVENGADO = 6           # Municipalidad | PIA | PIM | Certif. | Compromiso | Atención | DEVENGADO | Girado | Avance%
 MIN_MUNIS = 30              # un archivo con menos filas no viene desglosado por municipalidad
@@ -88,7 +89,7 @@ def leer_archivo(path, esperado_anio, etiqueta):
     return filas, probs
 
 def leer_anual(path, anio):
-    """Devuelve ({cod: (pim, devengado_anual)}, [problemas]) de un anual_<año>.xls"""
+    """Devuelve ({cod: (pim, devengado_anual, pia)}, [problemas]) de un anual_<año>.xls"""
     probs = []
     doc = leer(path)
     cab = texto(doc)
@@ -104,7 +105,7 @@ def leer_anual(path, anio):
             continue
         mm = re.match(r"^(\d{6})-\d{6}:\s*(.+)$", celdas[0])
         if mm:
-            filas[mm.group(1)] = (numero(celdas[IDX_PIM]), numero(celdas[IDX_DEVENGADO]))
+            filas[mm.group(1)] = (numero(celdas[IDX_PIM]), numero(celdas[IDX_DEVENGADO]), numero(celdas[IDX_PIA]))
     if len(filas) < MIN_MUNIS:
         probs.append(f"solo {len(filas)} municipalidades (¿exportaste agrupado por Municipalidad?)")
     return filas, probs
@@ -165,9 +166,10 @@ def main():
             else:
                 pim_ok.append(a)
                 for x in lista:
-                    x["pim"] = pims.get(x["cod"], (0, 0))[0]
+                    x["pim"] = pims.get(x["cod"], (0, 0, 0))[0]
+                    x["pia"] = pims.get(x["cod"], (0, 0, 0))[2]
                     # control: lo devengado Ene–Oct no puede superar lo devengado Ene–Dic
-                    dev_anual = pims.get(x["cod"], (0, 0))[1]
+                    dev_anual = pims.get(x["cod"], (0, 0, 0))[1]
                     if x["dev"] > dev_anual + TOL_CONTROL:
                         avisos.append(f"{a}: {x['nombre']} Ene–Oct S/ {x['dev']:,} > anual S/ {dev_anual:,}")
         else:

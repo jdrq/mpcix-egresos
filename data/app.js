@@ -312,7 +312,7 @@ function b2Datos() {
   if(!B2_HIST) return null;
   const lista={}, años=[];
   (B2_HIST["años"]||[]).forEach(a=>{
-    lista[a]=B2_HIST.ranking[String(a)].map(x=>({pos:x.pos,cod:x.cod,nombre:x.nombre,dev:x.dev,pia:null,pim:(x.pim===undefined?null:x.pim)}));
+    lista[a]=B2_HIST.ranking[String(a)].map(x=>({pos:x.pos,cod:x.cod,nombre:x.nombre,dev:x.dev,pia:(x.pia===undefined?null:x.pia),pim:(x.pim===undefined?null:x.pim)}));
     años.push(a);
   });
   let actual=null;
@@ -364,14 +364,14 @@ function renderB2() {
   if(nota){
     nota.style.display="";
     nota.textContent=esActual?"Dato diario acumulado · PIA y PIM vigentes"
-                            :"Devengado acumulado Ene–Oct · PIM al cierre del año";
+                            :"Devengado acumulado Ene–Oct · PIA y PIM del año";
   }
-  // Columnas: 2026 → PIA · PIM · Devengado · Avance %   |   2015–2025 → PIM · Devengado · Avance %
+  // Columnas (todos los años): PIA · PIM · Devengado · Avance %
   const th=$("b2thead");
   if(th) th.innerHTML=`<tr>
     <th class="ctr" style="width:64px">N°</th>
     <th class="left" style="min-width:260px">Municipalidad</th>
-    ${esActual?'<th class="num">PIA</th>':''}
+    <th class="num">PIA</th>
     <th class="num">PIM</th>
     <th class="num">Devengado</th>
     <th class="num">Avance %</th>
@@ -389,7 +389,7 @@ function renderB2() {
     return `<tr ${esMPL?'class="mpl-row"':''}>
       <td class="ord">${b2Ord(x.pos)}</td>
       <td style="font-size:.95em;font-weight:${esMPL?800:600}">${x.nombre}</td>
-      ${esActual?`<td class="num">${fmtNum(x.pia)}</td>`:""}
+      <td class="num">${(x.pia!==null&&x.pia!==undefined)?fmtNum(x.pia):"—"}</td>
       <td class="num">${pimTxt}</td>
       <td class="num">${fmtNum(x.dev)}</td>
       <td class="num">${avTxt}</td>
