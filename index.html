@@ -699,6 +699,7 @@ main{padding:20px 0 60px}
 .b2-fecha{background:#fffbea;border-bottom:1px solid var(--linea);padding:6px 22px;
   display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--texto-mut)}
 #b2bloque .slide-body{padding:0 22px 18px;gap:10px}
+#b2bloque .pdf-table td.num,#b2bloque .pdf-table th.num{white-space:nowrap}
 #b2bloque .pdf-table td.ord{text-align:center;font-weight:700;white-space:nowrap}
 .rk-bar{height:14px;background:#ece7e2;border-radius:3px;overflow:hidden;min-width:200px}
 .rk-bar i{display:block;height:100%;background:#4f86b3;border-radius:3px}
@@ -945,7 +946,7 @@ main{padding:20px 0 60px}
     <div class="b2-periodo">
       <span class="lbl">Período:</span>
       <span id="b2tabs" style="display:contents"></span>
-      <span class="b2-nota" id="b2nota" style="display:none">Dato diario acumulado</span>
+      <span class="b2-nota" id="b2nota"></span>
     </div>
     <div class="b2-fecha">
       <span id="b2fechaTxt">—</span>
@@ -954,13 +955,15 @@ main{padding:20px 0 60px}
     <div class="slide-body">
       <div class="tbl-wrap">
         <table class="pdf-table">
-          <thead><tr>
+          <thead id="b2thead"><tr>
             <th class="ctr" style="width:64px">N°</th>
             <th class="left" style="min-width:260px">Municipalidad</th>
+            <th class="num">PIM</th>
             <th class="num">Devengado</th>
-            <th class="left" style="min-width:220px">Gráfico</th>
+            <th class="num">Avance %</th>
+            <th class="left" style="min-width:160px">Gráfico</th>
           </tr></thead>
-          <tbody id="b2tbody"><tr><td colspan="4" class="vacio">Cargando ranking…</td></tr></tbody>
+          <tbody id="b2tbody"><tr><td colspan="7" class="vacio">Cargando ranking…</td></tr></tbody>
         </table>
       </div>
       <div class="b2-leyenda">

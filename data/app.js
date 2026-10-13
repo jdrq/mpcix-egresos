@@ -312,7 +312,7 @@ function b2Datos() {
   if(!B2_HIST) return null;
   const lista={}, años=[];
   (B2_HIST["años"]||[]).forEach(a=>{
-    lista[a]=B2_HIST.ranking[String(a)].map(x=>({pos:x.pos,cod:x.cod,nombre:x.nombre,dev:x.dev}));
+    lista[a]=B2_HIST.ranking[String(a)].map(x=>({pos:x.pos,cod:x.cod,nombre:x.nombre,dev:x.dev,pia:null,pim:(x.pim===undefined?null:x.pim)}));
     años.push(a);
   });
   let actual=null;
@@ -324,7 +324,7 @@ function b2Datos() {
     años.forEach(a=>lista[a].forEach(x=>{nomHist[x.cod]=x.nombre;}));
     const arr=reg.map(r=>{
       const cod=((r.desc||"").match(/^(\d{6})-/)||[])[1]||"";
-      return {cod,nombre:nomHist[cod]||b2Nombre(r.desc||""),dev:r.dev||0};
+      return {cod,nombre:nomHist[cod]||b2Nombre(r.desc||""),dev:r.dev||0,pia:r.pia||0,pim:r.pim||0};
     }).sort((x,y)=>y.dev-x.dev||x.nombre.localeCompare(y.nombre));
     let posPrev=0,devPrev=null;
     arr.forEach((x,i)=>{ x.pos=(x.dev===devPrev)?posPrev:i+1; posPrev=x.pos; devPrev=x.dev; });
@@ -349,7 +349,7 @@ function renderB2() {
   const f=$("b2fechaTxt"); if(f) f.textContent=fechaLarga();
   const D=b2Datos();
   if(!D||!D.años.length){
-    tbody.innerHTML=`<tr><td colspan="4" class="vacio">Sin datos: genera data/ranking_historico.json con scripts/generar_ranking_historico.py</td></tr>`;
+    tbody.innerHTML=`<tr><td colspan="7" class="vacio">Sin datos: genera data/ranking_historico.json con scripts/generar_ranking_historico.py</td></tr>`;
     return;
   }
   const {años,lista,actual}=D;
@@ -359,7 +359,23 @@ function renderB2() {
 
   $("b2tabs").innerHTML=años.map(a=>
     `<button type="button" class="rk-tab ${a===b2Anio?"on":""}" onclick="b2Sel(${a})">${a}</button>`).join("");
-  const nota=$("b2nota"); if(nota) nota.style.display=(b2Anio===actual)?"":"none";
+  const esActual=(b2Anio===actual);
+  const nota=$("b2nota");
+  if(nota){
+    nota.style.display="";
+    nota.textContent=esActual?"Dato diario acumulado · PIA y PIM vigentes"
+                            :"Devengado acumulado Ene–Oct · PIM al cierre del año";
+  }
+  // Columnas: 2026 → PIA · PIM · Devengado · Avance %   |   2015–2025 → PIM · Devengado · Avance %
+  const th=$("b2thead");
+  if(th) th.innerHTML=`<tr>
+    <th class="ctr" style="width:64px">N°</th>
+    <th class="left" style="min-width:260px">Municipalidad</th>
+    ${esActual?'<th class="num">PIA</th>':''}
+    <th class="num">PIM</th>
+    <th class="num">Devengado</th>
+    <th class="num">Avance %</th>
+    <th class="left" style="min-width:160px">Gráfico</th></tr>`;
   const amb=$("b2ambito"); if(amb) amb.textContent="Ámbito: inversiones · "+filas.length+" municipalidades";
 
   // Ranking por monto devengado
@@ -367,10 +383,16 @@ function renderB2() {
   tbody.innerHTML=filas.map(x=>{
     const esMPL=x.cod===B2_COD_MPCH;
     const w=Math.max(0,x.dev/max*100).toFixed(1);
+    const tienePim=(x.pim!==null&&x.pim!==undefined);
+    const pimTxt=tienePim?fmtNum(x.pim):"—";
+    const avTxt=(tienePim&&x.pim>0)?fmtPct(x.dev/x.pim*100):"—";
     return `<tr ${esMPL?'class="mpl-row"':''}>
       <td class="ord">${b2Ord(x.pos)}</td>
       <td style="font-size:.95em;font-weight:${esMPL?800:600}">${x.nombre}</td>
+      ${esActual?`<td class="num">${fmtNum(x.pia)}</td>`:""}
+      <td class="num">${pimTxt}</td>
       <td class="num">${fmtNum(x.dev)}</td>
+      <td class="num">${avTxt}</td>
       <td><div class="rk-bar"><i style="width:${w}%"></i></div></td>
     </tr>`;
   }).join("");

@@ -15,6 +15,12 @@ Cada archivo trae SOLO el devengado de su periodo, por eso se SUMAN:
     Devengado Ene–Oct = 1T + 2T + 3T + octubre
 (PIA y PIM vienen vacíos en estos archivos; no se usan.)
 
+PIM por año (opcional): si existe  anual_<año>.xls  (Ene–Dic, Sólo Proyectos, por
+Municipalidad) se lee su PIM y se guarda junto a cada municipalidad. El dashboard
+calcula  Avance % = Devengado Ene–Oct / PIM anual.  El PIM es un valor "foto"
+(stock): NUNCA se suma entre archivos. Si falta el anual de un año, esa columna
+queda en "—" para ese año.
+
 Solo usa la librería estándar de Python (no requiere pandas).
 Uso:   python scripts/generar_ranking_historico.py
 """
@@ -29,6 +35,7 @@ CONTROL = BASE / "data" / "historico_egresos.json"   # totales MPCH ya conocidos
 PERIODOS = [("1T", "Trimestre I:"), ("2T", "Trimestre II:"),
             ("3T", "Trimestre III:"), ("octubre", "Mes 10")]
 COD_MPCH = "140101"          # Municipalidad Provincial de Chiclayo
+IDX_PIM = 2
 IDX_DEVENGADO = 6           # Municipalidad | PIA | PIM | Certif. | Compromiso | Atención | DEVENGADO | Girado | Avance%
 MIN_MUNIS = 30              # un archivo con menos filas no viene desglosado por municipalidad
 TOL_CONTROL = 10            # soles de diferencia aceptables contra historico_egresos.json (redondeos del MEF)
@@ -80,6 +87,28 @@ def leer_archivo(path, esperado_anio, etiqueta):
         probs.append(f"solo {len(filas)} municipalidades (¿exportaste agrupado por Municipalidad?)")
     return filas, probs
 
+def leer_anual(path, anio):
+    """Devuelve ({cod: (pim, devengado_anual)}, [problemas]) de un anual_<año>.xls"""
+    probs = []
+    doc = leer(path)
+    cab = texto(doc)
+    m = re.search(r"Año de Ejecución:\s*(\d{4})", cab)
+    if not m or int(m.group(1)) != anio:
+        probs.append(f"el archivo es del año {m.group(1) if m else '?'}, no {anio}")
+    if "Sólo Proyectos" not in cab and "Solo Proyectos" not in cab:
+        probs.append("no está filtrado por 'Sólo Proyectos'")
+    filas = {}
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", doc, flags=re.S | re.I):
+        celdas = [texto(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", tr, flags=re.S | re.I)]
+        if len(celdas) < 9:
+            continue
+        mm = re.match(r"^(\d{6})-\d{6}:\s*(.+)$", celdas[0])
+        if mm:
+            filas[mm.group(1)] = (numero(celdas[IDX_PIM]), numero(celdas[IDX_DEVENGADO]))
+    if len(filas) < MIN_MUNIS:
+        probs.append(f"solo {len(filas)} municipalidades (¿exportaste agrupado por Municipalidad?)")
+    return filas, probs
+
 def procesar_anio(anio):
     carpeta = HIST / str(anio)
     acum, nombres = {}, {}
@@ -113,7 +142,7 @@ def main():
             leidos[a] = r
             maestro.update(r[1])
 
-    ranking, muni, ok = {}, {}, []
+    ranking, muni, ok, pim_ok = {}, {}, [], []
     for a, (acum, _) in leidos.items():
         acum = {cod: acum.get(cod, 0) for cod in maestro}
         orden = sorted(acum.items(), key=lambda kv: (-kv[1], maestro[kv[0]]))
@@ -126,6 +155,23 @@ def main():
         if m is None:
             errores.append(f"{a}: la MPCH ({COD_MPCH}) no aparece en ningún archivo")
             continue
+        # PIM anual (opcional)
+        fa = HIST / str(a) / f"anual_{a}.xls"
+        if fa.exists():
+            pims, probs = leer_anual(fa, a)
+            if probs:
+                errores.append(f"{a}/{fa.name}: " + "; ".join(probs))
+                pims = {}
+            else:
+                pim_ok.append(a)
+                for x in lista:
+                    x["pim"] = pims.get(x["cod"], (0, 0))[0]
+                    # control: lo devengado Ene–Oct no puede superar lo devengado Ene–Dic
+                    dev_anual = pims.get(x["cod"], (0, 0))[1]
+                    if x["dev"] > dev_anual + TOL_CONTROL:
+                        avisos.append(f"{a}: {x['nombre']} Ene–Oct S/ {x['dev']:,} > anual S/ {dev_anual:,}")
+        else:
+            avisos.append(f"{a}: sin anual_{a}.xls -> PIM y Avance % no disponibles ese año")
         ranking[str(a)] = lista
         muni[str(a)] = {"dev": m["dev"], "pos": m["pos"], "total": sum(x["dev"] for x in lista),
                        "municipalidades": len(lista)}
@@ -140,6 +186,7 @@ def main():
         "corte": "Ene–Oct",
         "criterio": "Devengado acumulado enero–octubre (1T+2T+3T+octubre) · Sólo Proyectos · Dpto. Lambayeque",
         "años": ok,
+        "años_con_pim": pim_ok,
         "ranking": ranking,
         "muni": muni,
     }

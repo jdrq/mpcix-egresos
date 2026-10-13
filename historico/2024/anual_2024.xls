@@ -1,0 +1,1593 @@
+<style type="text/css">
+	
+body
+{
+	font-weight: normal;
+	font-size: 0.7em;
+	word-spacing: normal;
+	text-transform: none;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	letter-spacing: normal;
+	background-color: #ffffff;
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	left: 0px;
+	right: 0px;
+	border: 0px;
+}
+
+/* Panel Historial */
+#PnlHistory
+{    
+    background-color: #ffffff;
+}
+
+.History
+{
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: solid 1px #dddddd;
+}
+
+.History tr
+{
+    height: 20px;
+}
+
+.History tr.alt
+{
+}
+
+.History td
+{
+    border-left: solid 1px #dddddd;
+    border-right: solid 1px #dddddd;
+}
+/* Panel Historial - Fin */
+
+/* Panel Datos */
+#PnlData
+{
+    background-color: #ffffff;
+}
+
+.MapTable
+{
+    background-color: #3a6ea5;
+    color: #ffffff;
+    border-collapse: collapse;
+    border-width: 0px;
+}
+
+.MapTable tr
+{
+    height: 18px;
+}
+
+.MapTable td
+{
+    border: solid 1px #dddddd;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.Data
+{    
+    width: 100%;
+    border-collapse: collapse;
+    border-width: 0px;
+}
+
+.Data tr
+{
+    cursor: pointer;    
+    height: 22px;
+    text-align: right;
+}
+
+.Data tr.alt
+{
+}
+
+.Data tr.More
+{
+    text-align: left;
+    height: auto;
+    background-color: #f1f1f1;    
+}
+
+.Data tr.More td
+{
+    padding-left: 4px;
+}
+
+.Data td
+{
+    border: solid 1px #dddddd;
+}
+/* Panel Datos - Fin */
+
+/* Cabecera */
+#hd
+{
+    font-size: 8pt;   
+}
+
+#hd .title
+{
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+#hd .subtitle
+{
+    font-size: 8pt;
+    font-family: Verdana;
+}
+
+#hd .fecha
+{
+    font-size: 8pt;
+}
+
+#hd span.value
+{
+    font-size: 10pt;
+}
+
+/* Cabecera - End */
+</style><body>
+	<table id="hd">
+		<tr>
+			<td colspan="9"><div class='title'><img src='../Images/Transparencia.gif' alt='' height='40' /><br /><br />Consulta Amigable</div><div class='subtitle'>Consulta de Ejecución del Gasto</div><br /><div class='fecha'>Fecha de la Consulta: 13-octubre-2026</div><br /><b>Año de Ejecución: <span class='value'>2024</span><br />Incluye: <span class='value'>Sólo Proyectos</span></b></td>
+		</tr>
+	</table>
+	
+                    <table class="History" cellspacing="0" cellpadding="1">
+                
+                    <tr align="right">
+                        
+                        <td align="left" style="font-size: 7pt; width: auto">
+                            TOTAL
+                            
+                            
+                            
+                            
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            56,233,353,054
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            70,130,033,598
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            66,678,606,583
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            61,364,174,980
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            59,447,895,430
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            57,168,259,898
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            57,118,903,075
+                        </td>
+                        <td align="right" style="width: 50px; white-space: nowrap">&nbsp;81.5</td>
+                    </tr>
+                
+                    <tr align="right" class="alt">
+                        
+                        <td align="left" style="font-size: 7pt; width: auto" tabindex="9">
+                            Nivel de Gobierno M: GOBIERNOS LOCALES
+                            
+                            
+                            
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="10">
+                            14,434,122,423
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="11">
+                            28,977,323,322
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="12">
+                            26,954,652,907
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="13">
+                            22,736,697,013
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="14">
+                            21,163,200,637
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="15">
+                            19,235,749,074
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="16">
+                            19,221,910,433
+                        </td>
+                        <td align="right" style="width: 50px; white-space: nowrap" tabindex="17">&nbsp;66.4</td>
+                    </tr>
+                
+                    <tr align="right">
+                        
+                        <td align="left" style="font-size: 7pt; width: auto">
+                            Gob.Loc./Mancom. M: MUNICIPALIDADES
+                            
+                            
+                            
+                            
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            14,434,122,423
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            28,967,153,127
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            26,944,550,610
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            22,729,805,542
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            21,156,309,167
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            19,228,857,605
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap">
+                            19,215,018,964
+                        </td>
+                        <td align="right" style="width: 50px; white-space: nowrap">&nbsp;66.4</td>
+                    </tr>
+                
+                    <tr align="right" class="alt">
+                        
+                        <td align="left" style="font-size: 7pt; width: auto" tabindex="9">
+                            Departamento 14: LAMBAYEQUE
+                            
+                            
+                            
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="10">
+                            193,606,080
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="11">
+                            526,993,549
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="12">
+                            476,516,891
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="13">
+                            333,911,581
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="14">
+                            287,111,519
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="15">
+                            243,314,224
+                        </td>
+                        <td align="right" style="width: 100px; white-space: nowrap" tabindex="16">
+                            243,276,992
+                        </td>
+                        <td align="right" style="width: 50px; white-space: nowrap" tabindex="17">&nbsp;46.2</td>
+                    </tr>
+                
+                    </table>
+                <table id="ctl00_CPH1_Mt0" class="MapTable" style="width:100%;">
+		<tr id="ctl00_CPH1_Mt0_Row0">
+			<td id="ctl00_CPH1_Mt0_td1" title="Concepto" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td1&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="cursor:hand;">Municipalidad</td><td id="ctl00_CPH1_Mt0_td2" title="Presupuesto Institucional de Apertura" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td2&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIA</td><td id="ctl00_CPH1_Mt0_td3" title="Presupuesto Institucional Modificado" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td3&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">PIM</td><td id="ctl00_CPH1_Mt0_td9" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td9&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Certificación</td><td id="ctl00_CPH1_Mt0_td4" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td4&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Compromiso Anual</td><td id="ctl00_CPH1_Mt0_TableCell1" title="Ejecución de Gastos en las diferentes fases" colspan="3">
+                                Ejecución
+                                </td><td id="ctl00_CPH1_Mt0_td8" rowspan="2" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td8&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:50px;cursor:hand;">Avance %&nbsp;
+                            </td>
+		</tr><tr id="ctl00_CPH1_Mt0_Row1">
+			<td id="ctl00_CPH1_Mt0_td5" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td5&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;cursor:hand;">Atención de Compromiso Mensual&nbsp;
+                            </td><td id="ctl00_CPH1_Mt0_td6" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td6&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">Devengado&nbsp;
+                            </td><td id="ctl00_CPH1_Mt0_td7" onclick="__doPostBack(&#39;ctl00$CPH1$Mt0$td7&#39;,&#39;&#39;)" onmouseover="this.style.backgroundColor = &#39;#568AC1&#39;;" onmouseout="this.style.backgroundColor = &#39;&#39;;" style="width:100px;white-space:nowrap;cursor:hand;">Girado&nbsp;
+                            </td>
+		</tr>
+	</table>
+                            <table class="Data" cellspacing="0" cellpadding="1">
+                        
+                            <tr id="tr0" onclick='kCod="301212";tr_clk(0, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left" style="width: auto">
+                                    140101-301212: MUNICIPALIDAD PROVINCIAL DE CHICLAYO
+                                    
+                                </td>
+                                <td style="white-space: nowrap; width: 100px">
+                                    36,449,308
+                                </td>
+                                <td style="white-space: nowrap; width: 100px">
+                                    48,751,108
+                                </td>
+                                <td style="white-space: nowrap; width: 100px">
+                                    41,115,455
+                                </td>
+                                <td style="white-space: nowrap; width: 100px">
+                                    39,196,479
+                                </td>
+                                <td style="white-space: nowrap; width: 100px">
+                                    32,239,356
+                                </td>
+                                <td style="white-space: nowrap; width: 100px">
+                                    26,500,952
+                                </td>
+                                <td style="white-space: nowrap; width: 100px">
+                                    26,500,952
+                                </td>
+                                <td style="white-space: nowrap; width: 50px">&nbsp;
+                                    54.4
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr1" onclick='kCod="301213";tr_clk(1, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140102-301213: MUNICIPALIDAD DISTRITAL DE CHONGOYAPE
+                                    
+                                </td>
+                                <td>
+                                    1,641,068
+                                </td>
+                                <td>
+                                    5,431,986
+                                </td>
+                                <td>
+                                    4,241,658
+                                </td>
+                                <td>
+                                    1,312,125
+                                </td>
+                                <td>
+                                    1,140,382
+                                </td>
+                                <td>
+                                    1,140,382
+                                </td>
+                                <td>
+                                    1,140,382
+                                </td>
+                                <td>&nbsp;
+                                    21.0
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr2" onclick='kCod="301214";tr_clk(2, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140103-301214: MUNICIPALIDAD DISTRITAL DE ETEN
+                                    
+                                </td>
+                                <td>
+                                    1,622,398
+                                </td>
+                                <td>
+                                    1,854,318
+                                </td>
+                                <td>
+                                    888,494
+                                </td>
+                                <td>
+                                    883,494
+                                </td>
+                                <td>
+                                    883,494
+                                </td>
+                                <td>
+                                    650,122
+                                </td>
+                                <td>
+                                    650,122
+                                </td>
+                                <td>&nbsp;
+                                    35.1
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr3" onclick='kCod="301215";tr_clk(3, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140104-301215: MUNICIPALIDAD DISTRITAL DE ETEN PUERTO
+                                    
+                                </td>
+                                <td>
+                                    67,760
+                                </td>
+                                <td>
+                                    9,789,206
+                                </td>
+                                <td>
+                                    9,002,917
+                                </td>
+                                <td>
+                                    3,857,206
+                                </td>
+                                <td>
+                                    3,857,206
+                                </td>
+                                <td>
+                                    3,447,858
+                                </td>
+                                <td>
+                                    3,447,858
+                                </td>
+                                <td>&nbsp;
+                                    35.2
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr4" onclick='kCod="301216";tr_clk(4, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140105-301216: MUNICIPALIDAD DISTRITAL DE JOSE LEONARDO ORTIZ
+                                    
+                                </td>
+                                <td>
+                                    16,329,323
+                                </td>
+                                <td>
+                                    41,329,317
+                                </td>
+                                <td>
+                                    41,083,578
+                                </td>
+                                <td>
+                                    31,426,529
+                                </td>
+                                <td>
+                                    22,061,437
+                                </td>
+                                <td>
+                                    18,988,396
+                                </td>
+                                <td>
+                                    18,988,396
+                                </td>
+                                <td>&nbsp;
+                                    45.9
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr5" onclick='kCod="301217";tr_clk(5, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140106-301217: MUNICIPALIDAD DISTRITAL DE LA VICTORIA
+                                    
+                                </td>
+                                <td>
+                                    3,044,028
+                                </td>
+                                <td>
+                                    15,304,759
+                                </td>
+                                <td>
+                                    14,941,460
+                                </td>
+                                <td>
+                                    12,952,675
+                                </td>
+                                <td>
+                                    12,952,675
+                                </td>
+                                <td>
+                                    12,651,209
+                                </td>
+                                <td>
+                                    12,651,209
+                                </td>
+                                <td>&nbsp;
+                                    82.7
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr6" onclick='kCod="301218";tr_clk(6, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140107-301218: MUNICIPALIDAD DISTRITAL DE LAGUNAS
+                                    
+                                </td>
+                                <td>
+                                    711,586
+                                </td>
+                                <td>
+                                    13,057,259
+                                </td>
+                                <td>
+                                    12,870,372
+                                </td>
+                                <td>
+                                    7,625,247
+                                </td>
+                                <td>
+                                    6,876,948
+                                </td>
+                                <td>
+                                    6,876,948
+                                </td>
+                                <td>
+                                    6,876,948
+                                </td>
+                                <td>&nbsp;
+                                    52.7
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr7" onclick='kCod="301219";tr_clk(7, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140108-301219: MUNICIPALIDAD DISTRITAL DE MONSEFU
+                                    
+                                </td>
+                                <td>
+                                    983,260
+                                </td>
+                                <td>
+                                    3,276,440
+                                </td>
+                                <td>
+                                    3,145,711
+                                </td>
+                                <td>
+                                    3,054,445
+                                </td>
+                                <td>
+                                    3,017,447
+                                </td>
+                                <td>
+                                    2,522,463
+                                </td>
+                                <td>
+                                    2,522,463
+                                </td>
+                                <td>&nbsp;
+                                    77.0
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr8" onclick='kCod="301220";tr_clk(8, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140109-301220: MUNICIPALIDAD DISTRITAL DE NUEVA ARICA
+                                    
+                                </td>
+                                <td>
+                                    522,899
+                                </td>
+                                <td>
+                                    15,506,881
+                                </td>
+                                <td>
+                                    15,078,449
+                                </td>
+                                <td>
+                                    5,909,764
+                                </td>
+                                <td>
+                                    4,986,519
+                                </td>
+                                <td>
+                                    4,971,918
+                                </td>
+                                <td>
+                                    4,971,918
+                                </td>
+                                <td>&nbsp;
+                                    32.1
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr9" onclick='kCod="301221";tr_clk(9, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140110-301221: MUNICIPALIDAD DISTRITAL DE OYOTUN
+                                    
+                                </td>
+                                <td>
+                                    1,001,679
+                                </td>
+                                <td>
+                                    22,635,412
+                                </td>
+                                <td>
+                                    21,944,383
+                                </td>
+                                <td>
+                                    10,073,409
+                                </td>
+                                <td>
+                                    4,827,609
+                                </td>
+                                <td>
+                                    3,816,877
+                                </td>
+                                <td>
+                                    3,816,877
+                                </td>
+                                <td>&nbsp;
+                                    16.9
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr10" onclick='kCod="301222";tr_clk(10, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140111-301222: MUNICIPALIDAD DISTRITAL DE PICSI
+                                    
+                                </td>
+                                <td>
+                                    2,449,428
+                                </td>
+                                <td>
+                                    19,108,102
+                                </td>
+                                <td>
+                                    18,922,991
+                                </td>
+                                <td>
+                                    13,816,772
+                                </td>
+                                <td>
+                                    8,788,432
+                                </td>
+                                <td>
+                                    8,788,432
+                                </td>
+                                <td>
+                                    8,788,432
+                                </td>
+                                <td>&nbsp;
+                                    46.0
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr11" onclick='kCod="301223";tr_clk(11, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140112-301223: MUNICIPALIDAD DISTRITAL DE PIMENTEL
+                                    
+                                </td>
+                                <td>
+                                    3,395,490
+                                </td>
+                                <td>
+                                    14,351,103
+                                </td>
+                                <td>
+                                    12,852,074
+                                </td>
+                                <td>
+                                    8,385,347
+                                </td>
+                                <td>
+                                    8,385,347
+                                </td>
+                                <td>
+                                    7,569,205
+                                </td>
+                                <td>
+                                    7,569,205
+                                </td>
+                                <td>&nbsp;
+                                    52.7
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr12" onclick='kCod="301224";tr_clk(12, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140113-301224: MUNICIPALIDAD DISTRITAL DE REQUE
+                                    
+                                </td>
+                                <td>
+                                    2,844,768
+                                </td>
+                                <td>
+                                    5,892,055
+                                </td>
+                                <td>
+                                    5,684,836
+                                </td>
+                                <td>
+                                    5,505,006
+                                </td>
+                                <td>
+                                    4,912,997
+                                </td>
+                                <td>
+                                    4,803,328
+                                </td>
+                                <td>
+                                    4,803,328
+                                </td>
+                                <td>&nbsp;
+                                    81.5
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr13" onclick='kCod="301225";tr_clk(13, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140114-301225: MUNICIPALIDAD DISTRITAL DE SANTA ROSA
+                                    
+                                </td>
+                                <td>
+                                    1,415,356
+                                </td>
+                                <td>
+                                    5,346,320
+                                </td>
+                                <td>
+                                    3,353,688
+                                </td>
+                                <td>
+                                    792,879
+                                </td>
+                                <td>
+                                    792,879
+                                </td>
+                                <td>
+                                    464,446
+                                </td>
+                                <td>
+                                    464,446
+                                </td>
+                                <td>&nbsp;
+                                    8.7
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr14" onclick='kCod="301226";tr_clk(14, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140115-301226: MUNICIPALIDAD DISTRITAL DE ZAÑA
+                                    
+                                </td>
+                                <td>
+                                    822,040
+                                </td>
+                                <td>
+                                    4,383,778
+                                </td>
+                                <td>
+                                    3,803,393
+                                </td>
+                                <td>
+                                    2,112,867
+                                </td>
+                                <td>
+                                    2,112,867
+                                </td>
+                                <td>
+                                    1,827,123
+                                </td>
+                                <td>
+                                    1,827,123
+                                </td>
+                                <td>&nbsp;
+                                    41.7
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr15" onclick='kCod="301227";tr_clk(15, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140116-301227: MUNICIPALIDAD DISTRITAL DE CAYALTI
+                                    
+                                </td>
+                                <td>
+                                    3,749,970
+                                </td>
+                                <td>
+                                    20,479,137
+                                </td>
+                                <td>
+                                    19,585,732
+                                </td>
+                                <td>
+                                    4,175,846
+                                </td>
+                                <td>
+                                    1,042,071
+                                </td>
+                                <td>
+                                    976,830
+                                </td>
+                                <td>
+                                    976,830
+                                </td>
+                                <td>&nbsp;
+                                    4.8
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr16" onclick='kCod="301228";tr_clk(16, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140117-301228: MUNICIPALIDAD DISTRITAL DE PATAPO
+                                    
+                                </td>
+                                <td>
+                                    1,163,626
+                                </td>
+                                <td>
+                                    10,242,740
+                                </td>
+                                <td>
+                                    9,633,309
+                                </td>
+                                <td>
+                                    6,115,697
+                                </td>
+                                <td>
+                                    6,115,697
+                                </td>
+                                <td>
+                                    2,452,073
+                                </td>
+                                <td>
+                                    2,452,073
+                                </td>
+                                <td>&nbsp;
+                                    23.9
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr17" onclick='kCod="301229";tr_clk(17, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140118-301229: MUNICIPALIDAD DISTRITAL DE POMALCA
+                                    
+                                </td>
+                                <td>
+                                    368,148
+                                </td>
+                                <td>
+                                    368,148
+                                </td>
+                                <td>
+                                    200,794
+                                </td>
+                                <td>
+                                    200,794
+                                </td>
+                                <td>
+                                    51,000
+                                </td>
+                                <td>
+                                    51,000
+                                </td>
+                                <td>
+                                    51,000
+                                </td>
+                                <td>&nbsp;
+                                    13.9
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr18" onclick='kCod="301230";tr_clk(18, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140119-301230: MUNICIPALIDAD DISTRITAL DE PUCALA
+                                    
+                                </td>
+                                <td>
+                                    826,756
+                                </td>
+                                <td>
+                                    2,603,258
+                                </td>
+                                <td>
+                                    2,005,016
+                                </td>
+                                <td>
+                                    794,359
+                                </td>
+                                <td>
+                                    794,359
+                                </td>
+                                <td>
+                                    762,159
+                                </td>
+                                <td>
+                                    762,159
+                                </td>
+                                <td>&nbsp;
+                                    29.3
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr19" onclick='kCod="301231";tr_clk(19, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140120-301231: MUNICIPALIDAD DISTRITAL DE TUMAN
+                                    
+                                </td>
+                                <td>
+                                    663,123
+                                </td>
+                                <td>
+                                    9,841,682
+                                </td>
+                                <td>
+                                    9,314,537
+                                </td>
+                                <td>
+                                    5,928,930
+                                </td>
+                                <td>
+                                    2,084,740
+                                </td>
+                                <td>
+                                    2,012,780
+                                </td>
+                                <td>
+                                    2,012,780
+                                </td>
+                                <td>&nbsp;
+                                    20.5
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr20" onclick='kCod="301232";tr_clk(20, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140201-301232: MUNICIPALIDAD PROVINCIAL DE FERREÑAFE
+                                    
+                                </td>
+                                <td>
+                                    6,629,567
+                                </td>
+                                <td>
+                                    21,024,714
+                                </td>
+                                <td>
+                                    19,545,423
+                                </td>
+                                <td>
+                                    13,928,201
+                                </td>
+                                <td>
+                                    13,862,297
+                                </td>
+                                <td>
+                                    8,131,760
+                                </td>
+                                <td>
+                                    8,131,760
+                                </td>
+                                <td>&nbsp;
+                                    38.7
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr21" onclick='kCod="301233";tr_clk(21, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140202-301233: MUNICIPALIDAD DISTRITAL DE KAÑARIS
+                                    
+                                </td>
+                                <td>
+                                    3,561,222
+                                </td>
+                                <td>
+                                    9,810,091
+                                </td>
+                                <td>
+                                    9,786,545
+                                </td>
+                                <td>
+                                    9,109,444
+                                </td>
+                                <td>
+                                    9,097,779
+                                </td>
+                                <td>
+                                    7,106,697
+                                </td>
+                                <td>
+                                    7,106,697
+                                </td>
+                                <td>&nbsp;
+                                    72.4
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr22" onclick='kCod="301234";tr_clk(22, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140203-301234: MUNICIPALIDAD DISTRITAL DE INCAHUASI
+                                    
+                                </td>
+                                <td>
+                                    2,957,945
+                                </td>
+                                <td>
+                                    15,625,781
+                                </td>
+                                <td>
+                                    15,130,031
+                                </td>
+                                <td>
+                                    8,991,022
+                                </td>
+                                <td>
+                                    8,906,262
+                                </td>
+                                <td>
+                                    8,414,167
+                                </td>
+                                <td>
+                                    8,414,167
+                                </td>
+                                <td>&nbsp;
+                                    53.8
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr23" onclick='kCod="301235";tr_clk(23, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140204-301235: MUNICIPALIDAD DISTRITAL DE MANUEL ANTONIO MESONES MURO
+                                    
+                                </td>
+                                <td>
+                                    2,361,609
+                                </td>
+                                <td>
+                                    2,429,611
+                                </td>
+                                <td>
+                                    1,618,497
+                                </td>
+                                <td>
+                                    1,618,497
+                                </td>
+                                <td>
+                                    1,618,497
+                                </td>
+                                <td>
+                                    1,554,580
+                                </td>
+                                <td>
+                                    1,553,805
+                                </td>
+                                <td>&nbsp;
+                                    64.0
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr24" onclick='kCod="301236";tr_clk(24, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140205-301236: MUNICIPALIDAD DISTRITAL DE PITIPO
+                                    
+                                </td>
+                                <td>
+                                    4,002,235
+                                </td>
+                                <td>
+                                    13,175,502
+                                </td>
+                                <td>
+                                    12,677,277
+                                </td>
+                                <td>
+                                    12,000,553
+                                </td>
+                                <td>
+                                    7,532,698
+                                </td>
+                                <td>
+                                    7,356,980
+                                </td>
+                                <td>
+                                    7,356,980
+                                </td>
+                                <td>&nbsp;
+                                    55.8
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr25" onclick='kCod="301237";tr_clk(25, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140206-301237: MUNICIPALIDAD DISTRITAL DE PUEBLO NUEVO
+                                    
+                                </td>
+                                <td>
+                                    1,316,993
+                                </td>
+                                <td>
+                                    10,963,404
+                                </td>
+                                <td>
+                                    10,603,892
+                                </td>
+                                <td>
+                                    1,358,752
+                                </td>
+                                <td>
+                                    1,331,886
+                                </td>
+                                <td>
+                                    1,329,186
+                                </td>
+                                <td>
+                                    1,329,186
+                                </td>
+                                <td>&nbsp;
+                                    12.1
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr26" onclick='kCod="301238";tr_clk(26, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140301-301238: MUNICIPALIDAD PROVINCIAL DE LAMBAYEQUE
+                                    
+                                </td>
+                                <td>
+                                    20,124,702
+                                </td>
+                                <td>
+                                    37,264,635
+                                </td>
+                                <td>
+                                    28,844,091
+                                </td>
+                                <td>
+                                    23,718,449
+                                </td>
+                                <td>
+                                    22,217,619
+                                </td>
+                                <td>
+                                    22,160,134
+                                </td>
+                                <td>
+                                    22,147,996
+                                </td>
+                                <td>&nbsp;
+                                    59.5
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr27" onclick='kCod="301239";tr_clk(27, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140302-301239: MUNICIPALIDAD DISTRITAL DE CHOCHOPE
+                                    
+                                </td>
+                                <td>
+                                    693,388
+                                </td>
+                                <td>
+                                    4,627,002
+                                </td>
+                                <td>
+                                    4,505,230
+                                </td>
+                                <td>
+                                    4,279,810
+                                </td>
+                                <td>
+                                    873,308
+                                </td>
+                                <td>
+                                    870,708
+                                </td>
+                                <td>
+                                    870,708
+                                </td>
+                                <td>&nbsp;
+                                    18.8
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr28" onclick='kCod="301240";tr_clk(28, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140303-301240: MUNICIPALIDAD DISTRITAL DE ILLIMO
+                                    
+                                </td>
+                                <td>
+                                    13,078,676
+                                </td>
+                                <td>
+                                    15,625,935
+                                </td>
+                                <td>
+                                    15,597,440
+                                </td>
+                                <td>
+                                    14,749,192
+                                </td>
+                                <td>
+                                    14,745,901
+                                </td>
+                                <td>
+                                    13,608,092
+                                </td>
+                                <td>
+                                    13,608,092
+                                </td>
+                                <td>&nbsp;
+                                    87.1
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr29" onclick='kCod="301241";tr_clk(29, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140304-301241: MUNICIPALIDAD DISTRITAL DE JAYANCA
+                                    
+                                </td>
+                                <td>
+                                    5,492,149
+                                </td>
+                                <td>
+                                    15,740,700
+                                </td>
+                                <td>
+                                    14,987,235
+                                </td>
+                                <td>
+                                    13,246,215
+                                </td>
+                                <td>
+                                    13,183,687
+                                </td>
+                                <td>
+                                    7,674,449
+                                </td>
+                                <td>
+                                    7,674,449
+                                </td>
+                                <td>&nbsp;
+                                    48.8
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr30" onclick='kCod="301242";tr_clk(30, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140305-301242: MUNICIPALIDAD DISTRITAL DE MOCHUMI
+                                    
+                                </td>
+                                <td>
+                                    2,794,728
+                                </td>
+                                <td>
+                                    7,061,052
+                                </td>
+                                <td>
+                                    6,722,582
+                                </td>
+                                <td>
+                                    5,090,819
+                                </td>
+                                <td>
+                                    5,066,619
+                                </td>
+                                <td>
+                                    4,683,076
+                                </td>
+                                <td>
+                                    4,683,076
+                                </td>
+                                <td>&nbsp;
+                                    66.3
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr31" onclick='kCod="301243";tr_clk(31, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140306-301243: MUNICIPALIDAD DISTRITAL DE MORROPE
+                                    
+                                </td>
+                                <td>
+                                    4,530,827
+                                </td>
+                                <td>
+                                    9,587,734
+                                </td>
+                                <td>
+                                    6,833,045
+                                </td>
+                                <td>
+                                    4,832,926
+                                </td>
+                                <td>
+                                    4,832,926
+                                </td>
+                                <td>
+                                    2,193,736
+                                </td>
+                                <td>
+                                    2,193,440
+                                </td>
+                                <td>&nbsp;
+                                    22.9
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr32" onclick='kCod="301244";tr_clk(32, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140307-301244: MUNICIPALIDAD DISTRITAL DE MOTUPE
+                                    
+                                </td>
+                                <td>
+                                    7,639,938
+                                </td>
+                                <td>
+                                    16,090,190
+                                </td>
+                                <td>
+                                    14,997,738
+                                </td>
+                                <td>
+                                    13,742,986
+                                </td>
+                                <td>
+                                    13,736,404
+                                </td>
+                                <td>
+                                    12,656,491
+                                </td>
+                                <td>
+                                    12,656,491
+                                </td>
+                                <td>&nbsp;
+                                    78.7
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr33" onclick='kCod="301245";tr_clk(33, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140308-301245: MUNICIPALIDAD DISTRITAL DE OLMOS
+                                    
+                                </td>
+                                <td>
+                                    20,143,992
+                                </td>
+                                <td>
+                                    37,069,017
+                                </td>
+                                <td>
+                                    30,815,542
+                                </td>
+                                <td>
+                                    12,620,181
+                                </td>
+                                <td>
+                                    12,568,053
+                                </td>
+                                <td>
+                                    9,397,188
+                                </td>
+                                <td>
+                                    9,373,164
+                                </td>
+                                <td>&nbsp;
+                                    25.4
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr34" onclick='kCod="301246";tr_clk(34, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140309-301246: MUNICIPALIDAD DISTRITAL DE PACORA
+                                    
+                                </td>
+                                <td>
+                                    2,820,341
+                                </td>
+                                <td>
+                                    5,809,399
+                                </td>
+                                <td>
+                                    1,445,230
+                                </td>
+                                <td>
+                                    790,186
+                                </td>
+                                <td>
+                                    790,186
+                                </td>
+                                <td>
+                                    781,265
+                                </td>
+                                <td>
+                                    781,265
+                                </td>
+                                <td>&nbsp;
+                                    13.4
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr35" onclick='kCod="301247";tr_clk(35, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140310-301247: MUNICIPALIDAD DISTRITAL DE SALAS
+                                    
+                                </td>
+                                <td>
+                                    894,218
+                                </td>
+                                <td>
+                                    11,787,616
+                                </td>
+                                <td>
+                                    11,745,355
+                                </td>
+                                <td>
+                                    11,395,389
+                                </td>
+                                <td>
+                                    11,354,889
+                                </td>
+                                <td>
+                                    7,700,946
+                                </td>
+                                <td>
+                                    7,700,946
+                                </td>
+                                <td>&nbsp;
+                                    65.3
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr36" onclick='kCod="301248";tr_clk(36, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140311-301248: MUNICIPALIDAD DISTRITAL DE SAN JOSE
+                                    
+                                </td>
+                                <td>
+                                    2,885,769
+                                </td>
+                                <td>
+                                    6,401,115
+                                </td>
+                                <td>
+                                    5,210,755
+                                </td>
+                                <td>
+                                    2,990,202
+                                </td>
+                                <td>
+                                    2,140,160
+                                </td>
+                                <td>
+                                    1,880,302
+                                </td>
+                                <td>
+                                    1,880,302
+                                </td>
+                                <td>&nbsp;
+                                    29.4
+                                </td>
+                            </tr>
+                            
+                        
+                            <tr class="alt" id="tr37" onclick='kCod="301249";tr_clk(37, this)'
+                                onmouseover="tr_over(this)" onmouseout="tr_out(this)">
+                                
+                                <td align="left">
+                                    140312-301249: MUNICIPALIDAD DISTRITAL DE TUCUME
+                                    
+                                </td>
+                                <td>
+                                    11,605,767
+                                </td>
+                                <td>
+                                    17,347,042
+                                </td>
+                                <td>
+                                    15,782,131
+                                </td>
+                                <td>
+                                    15,328,889
+                                </td>
+                                <td>
+                                    15,328,889
+                                </td>
+                                <td>
+                                    14,539,970
+                                </td>
+                                <td>
+                                    14,539,970
+                                </td>
+                                <td>&nbsp;
+                                    83.8
+                                </td>
+                            </tr>
+                            
+                        
+                            </table>
+                        
+</body>
