@@ -972,7 +972,7 @@ main{padding:20px 0 60px}
         <span><i style="background:#4f86b3"></i>Devengado S/</span>
       </div>
       <div class="b2-chart">
-        <div class="b2-chart-tit">Gráfico lineal — Devengado en monto · Enero a Octubre</div>
+        <div class="b2-chart-tit" id="b2charttit">Gráfico lineal — Devengado en monto · Enero a Noviembre</div>
         <div class="chart-wrap" style="min-height:270px"><canvas id="b2chart"></canvas></div>
       </div>
     </div>
@@ -1180,14 +1180,14 @@ main{padding:20px 0 60px}
   </div>
 
   <!-- ══════════════════════════════════════
-       SLIDE 8 — HISTÓRICO ENE–OCT
+       SLIDE 8 — HISTÓRICO AL CORTE (dinámico: ver data/ranking_historico.json)
   ══════════════════════════════════════ -->
   <div class="slide" id="b8bloque">
     <div class="slide-header">
-      <div class="slide-titulo"><span class="slide-num">08</span>Comparativo Histórico — Devengado Ene–Oct</div>
+      <div class="slide-titulo"><span class="slide-num">08</span><span id="b8titulo">Comparativo Histórico — Devengado Ene–Nov</span></div>
     </div>
     <div class="slide-subband">
-      <span class="sb-label">Evolución del gasto acumulado enero–octubre · Solo Proyectos</span>
+      <span class="sb-label" id="b8sub">Evolución del gasto acumulado enero–noviembre · Solo Proyectos</span>
       <span class="sb-fecha" id="sb8fecha">—</span>
     </div>
     <div class="slide-body">
@@ -1197,7 +1197,7 @@ main{padding:20px 0 60px}
       </div>
     </div>
     <div class="slide-footer">
-      <span class="sf-fuente" id="b8pie">Fuente: Consulta Amigable MEF 2015–2025: acumulado Ene–Oct extraído de registros históricos · 2026: acumulado diario</span>
+      <span class="sf-fuente" id="b8pie">Fuente: Consulta Amigable MEF 2015–2025: acumulado Ene–Nov extraído de registros históricos · 2026: acumulado diario</span>
       <span class="sf-logo">MPCH · EGRESOS 2026</span>
     </div>
   </div>

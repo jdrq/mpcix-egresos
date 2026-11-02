@@ -3,26 +3,35 @@
 """
 generar_ranking_historico.py
 ============================
-Lee los .xls de MEF Consulta Amigable guardados en  historico/<año>/  y genera
-data/ranking_historico.json  (lo que consume el Bloque 10 del dashboard).
+Lee los .xls de MEF Consulta Amigable guardados en  historico/<año>/  y genera:
+    data/ranking_historico.json   (Bloque de ranking: slide 2, y años 2015+ del slide 8)
+    data/historico_egresos.json   (MPCH por año: slide 8)
+Los dos JSON llevan el MES DE CORTE (campo "corte_mes"); index.html y app.js arman
+sus textos ("Ene–Nov", "enero–noviembre"...) a partir de ese campo. Para pasar a otro
+mes NO hay que tocar index.html ni app.js: solo cambiar CORTE_MES (o pasar --mes N),
+bajar el archivo del mes nuevo a historico/<año>/ y correr este script.
 
-Para cada año necesita 4 archivos (Sólo Proyectos, agrupado por Municipalidad):
-    1T_<año>.xls   -> Trimestre I
-    2T_<año>.xls   -> Trimestre II
-    3T_<año>.xls   -> Trimestre III
-    octubre_<año>.xls -> Mes 10 (octubre)
+Para cada año necesita (Sólo Proyectos, agrupado por Municipalidad):
+    1T_<año>.xls, 2T_<año>.xls, 3T_<año>.xls   -> Trimestres I, II y III
+    octubre_<año>.xls   -> Mes 10   (si CORTE_MES >= 10)
+    noviembre_<año>.xls -> Mes 11   (si CORTE_MES >= 11)
+    diciembre_<año>.xls -> Mes 12   (si CORTE_MES == 12)
 Cada archivo trae SOLO el devengado de su periodo, por eso se SUMAN:
-    Devengado Ene–Oct = 1T + 2T + 3T + octubre
+    Devengado Ene–<corte> = 1T + 2T + 3T + octubre [+ noviembre [+ diciembre]]
 (PIA y PIM vienen vacíos en estos archivos; no se usan.)
 
 PIM por año (opcional): si existe  anual_<año>.xls  (Ene–Dic, Sólo Proyectos, por
 Municipalidad) se lee su PIA y PIM y se guardan junto a cada municipalidad. El dashboard
-calcula  Avance % = Devengado Ene–Oct / PIM anual.  El PIM es un valor "foto"
+calcula  Avance % = Devengado acumulado / PIM anual.  El PIM es un valor "foto"
 (stock): NUNCA se suma entre archivos. Si falta el anual de un año, esa columna
 queda en "—" para ese año.
 
+"Todo o nada": si cualquier archivo falla la validación (año, Sólo Proyectos, periodo,
+nº de municipalidades) NO se escribe ningún JSON y el sitio sigue con el corte anterior.
+
 Solo usa la librería estándar de Python (no requiere pandas).
-Uso:   python scripts/generar_ranking_historico.py
+Uso:   python scripts/generar_ranking_historico.py            (usa CORTE_MES)
+       python scripts/generar_ranking_historico.py --mes 12   (otro corte, 10 a 12)
 """
 import json, re, sys, html, datetime
 from pathlib import Path
@@ -30,10 +39,23 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent.parent
 HIST = BASE / "historico"
 SALIDA = BASE / "data" / "ranking_historico.json"
-CONTROL = BASE / "data" / "historico_egresos.json"   # totales MPCH ya conocidos (control cruzado)
+CONTROL = BASE / "data" / "historico_egresos.json"   # MPCH por año: se LEE (corte anterior) y se REESCRIBE
 
-PERIODOS = [("1T", "Trimestre I:"), ("2T", "Trimestre II:"),
-            ("3T", "Trimestre III:"), ("octubre", "Mes 10")]
+# ── MES DE CORTE (lo único que se cambia cada mes) ───────────────────────────
+CORTE_MES = 11               # 10 = octubre · 11 = noviembre · 12 = diciembre
+# ─────────────────────────────────────────────────────────────────────────────
+MESES = {10: ("octubre", "Oct", "Mes 10"),
+         11: ("noviembre", "Nov", "Mes 11"),
+         12: ("diciembre", "Dic", "Mes 12")}
+
+def periodos(corte):
+    """Archivos que se suman para llegar al corte (1T+2T+3T y los meses 10..corte)."""
+    p = [("1T", "Trimestre I:"), ("2T", "Trimestre II:"), ("3T", "Trimestre III:")]
+    for m in range(10, corte + 1):
+        p.append((MESES[m][0], MESES[m][2]))
+    return p
+
+PERIODOS = periodos(CORTE_MES)
 COD_MPCH = "140101"          # Municipalidad Provincial de Chiclayo
 IDX_PIA = 1
 IDX_PIM = 2
@@ -116,7 +138,7 @@ def procesar_anio(anio):
     for clave, etiqueta in PERIODOS:
         f = carpeta / f"{clave}_{anio}.xls"
         if not f.exists():
-            avisos.append(f"{anio}: falta {f.name}; se omite el año completo")
+            errores.append(f"{anio}: falta {f.name} (descárgalo en historico/{anio}/ y vuelve a correr)")
             return None
         filas, probs = leer_archivo(f, anio, etiqueta)
         if probs:
@@ -128,8 +150,21 @@ def procesar_anio(anio):
     return acum, nombres
 
 def main():
+    global CORTE_MES, PERIODOS
+    if "--mes" in sys.argv:
+        try:
+            CORTE_MES = int(sys.argv[sys.argv.index("--mes") + 1])
+        except (IndexError, ValueError):
+            print("ERROR : usa  --mes 10 | 11 | 12"); return 1
+    if CORTE_MES not in MESES:
+        print(f"ERROR : CORTE_MES={CORTE_MES} no soportado (10, 11 o 12)"); return 1
+    PERIODOS = periodos(CORTE_MES)
+    corte_corto = "Ene–" + MESES[CORTE_MES][1]            # p. ej. "Ene–Nov"
+    corte_largo = "enero–" + MESES[CORTE_MES][0]          # p. ej. "enero–noviembre"
+    print(f"Corte: {corte_corto}  (archivos: {', '.join(k for k, _ in PERIODOS)})")
+
     anios = sorted(int(p.name) for p in HIST.iterdir() if p.is_dir() and re.fullmatch(r"\d{4}", p.name))
-    control = {}
+    control = {}      # MPCH por año del corte ANTERIOR (lo que había en historico_egresos.json)
     if CONTROL.exists():
         control = {int(k): v for k, v in json.loads(CONTROL.read_text(encoding="utf-8")).items()}
 
@@ -168,40 +203,51 @@ def main():
                 for x in lista:
                     x["pim"] = pims.get(x["cod"], (0, 0, 0))[0]
                     x["pia"] = pims.get(x["cod"], (0, 0, 0))[2]
-                    # control: lo devengado Ene–Oct no puede superar lo devengado Ene–Dic
+                    # control: lo devengado al corte no puede superar lo devengado Ene–Dic
                     dev_anual = pims.get(x["cod"], (0, 0, 0))[1]
                     if x["dev"] > dev_anual + TOL_CONTROL:
-                        avisos.append(f"{a}: {x['nombre']} Ene–Oct S/ {x['dev']:,} > anual S/ {dev_anual:,}")
+                        avisos.append(f"{a}: {x['nombre']} {corte_corto} S/ {x['dev']:,} > anual S/ {dev_anual:,}")
         else:
             avisos.append(f"{a}: sin anual_{a}.xls -> PIM y Avance % no disponibles ese año")
         ranking[str(a)] = lista
         muni[str(a)] = {"dev": m["dev"], "pos": m["pos"], "total": sum(x["dev"] for x in lista),
                        "municipalidades": len(lista)}
         ok.append(a)
-        if a in control and abs(control[a] - m["dev"]) > TOL_CONTROL:
-            avisos.append(f"{a}: MPCH suma {m['dev']:,} pero historico_egresos.json dice {control[a]:,} "
-                          f"(dif. {m['dev']-control[a]:+,}). Revisa los archivos de ese año.")
+        # control contra el corte anterior: un acumulado nunca baja al sumar meses
+        if a in control and m["dev"] < control[a] - TOL_CONTROL:
+            avisos.append(f"{a}: MPCH {corte_corto} S/ {m['dev']:,} es MENOR que el corte anterior "
+                          f"S/ {control[a]:,} (dif. {m['dev']-control[a]:+,}). Revisa los archivos de ese año.")
 
     salida = {
-        "version": 1,
+        "version": 2,
         "generado": datetime.datetime.now().isoformat(timespec="seconds"),
-        "corte": "Ene–Oct",
-        "criterio": "Devengado acumulado enero–octubre (1T+2T+3T+octubre) · Sólo Proyectos · Dpto. Lambayeque",
+        "corte": corte_corto,
+        "corte_mes": CORTE_MES,
+        "criterio": f"Devengado acumulado {corte_largo} ({'+'.join(k for k, _ in PERIODOS)}) · Sólo Proyectos · Dpto. Lambayeque",
         "años": ok,
         "años_con_pim": pim_ok,
         "ranking": ranking,
         "muni": muni,
     }
-    SALIDA.write_text(json.dumps(salida, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     print(f"Años generados: {ok}")
     for a in ok:
         m = muni[str(a)]
-        print(f"  {a}: MPCH puesto {m['pos']:>2}/{m['municipalidades']}  devengado S/ {m['dev']:>12,}   total dpto S/ {m['total']:>13,}")
+        prev = f"  (+{m['dev']-control[a]:,} vs corte anterior)" if a in control else ""
+        print(f"  {a}: MPCH puesto {m['pos']:>2}/{m['municipalidades']}  devengado S/ {m['dev']:>12,}   total dpto S/ {m['total']:>13,}{prev}")
     for t in avisos:  print("AVISO :", t)
     for t in errores: print("ERROR :", t)
+
+    if errores:      # todo o nada: no se toca ningún JSON
+        print("NO SE ESCRIBIÓ NINGÚN ARCHIVO: corrige los ERROR de arriba y vuelve a correr.")
+        return 1
+
+    SALIDA.write_text(json.dumps(salida, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # MPCH por año (slide 8): mismos números del ranking, un solo origen de verdad
+    CONTROL.write_text(json.dumps({str(a): muni[str(a)]["dev"] for a in ok}, indent=2) + "\n", encoding="utf-8")
     print(f"-> {SALIDA}")
-    return 1 if errores else 0
+    print(f"-> {CONTROL}")
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())

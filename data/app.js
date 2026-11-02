@@ -288,6 +288,25 @@ function renderB1() {
 }
 
 // ══════════════════════════════════════════════════════════════
+// CORTE DINÁMICO — el mes de corte del histórico sale de
+// data/ranking_historico.json ("corte_mes"). Cada cierre de mes solo se
+// regenera el JSON con scripts/generar_ranking_historico.py; ni index.html
+// ni app.js se editan.
+// ══════════════════════════════════════════════════════════════
+const MESES_CORTE={10:["Oct","octubre"],11:["Nov","noviembre"],12:["Dic","diciembre"]};
+function corteInfo(){
+  const m=B2_HIST&&MESES_CORTE[B2_HIST.corte_mes];
+  if(!m) return {corto:"Acumulado",largo:"acumulado",rango:"Acumulado",ene:"Acumulado"};
+  return {corto:m[0],largo:m[1],rango:"Ene–"+m[0],ene:"Enero a "+m[1].charAt(0).toUpperCase()+m[1].slice(1)};
+}
+function aplicarCorte(){
+  const c=corteInfo(), set=(id,t)=>{const e=$(id); if(e) e.textContent=t;};
+  set("b8titulo","Comparativo Histórico — Devengado "+c.rango);
+  set("b8sub","Evolución del gasto acumulado enero–"+c.largo+" · Solo Proyectos");
+  set("b2charttit","Gráfico lineal — Devengado en monto · "+c.ene);
+}
+
+// ══════════════════════════════════════════════════════════════
 // B2 — Ranking Departamental
 // ══════════════════════════════════════════════════════════════
 // Años anteriores: data/ranking_historico.json (lo genera
@@ -357,6 +376,7 @@ function renderB2() {
   if(!b2Manual||!años.includes(b2Anio)) b2Anio=años[años.length-1];
   const filas=lista[b2Anio];
 
+  aplicarCorte();
   $("b2tabs").innerHTML=años.map(a=>
     `<button type="button" class="rk-tab ${a===b2Anio?"on":""}" onclick="b2Sel(${a})">${a}</button>`).join("");
   const esActual=(b2Anio===actual);
@@ -364,7 +384,7 @@ function renderB2() {
   if(nota){
     nota.style.display="";
     nota.textContent=esActual?"Dato diario acumulado · PIA y PIM vigentes"
-                            :"Devengado acumulado Ene–Oct · PIA y PIM del año";
+                            :`Devengado acumulado ${corteInfo().rango} · PIA y PIM del año`;
   }
   // Columnas (todos los años): PIA · PIM · Devengado · Avance %
   const th=$("b2thead");
@@ -397,7 +417,7 @@ function renderB2() {
     </tr>`;
   }).join("");
 
-  // Gráfico lineal: devengado de la MPL, un punto por año (Ene–Oct)
+  // Gráfico lineal: devengado de la MPL, un punto por año (corte dinámico)
   const canvas=$("b2chart"); if(!canvas) return;
   if(b2Chart){ b2Chart.destroy(); b2Chart=null; }
   const serie=años.map(a=>{const m=lista[a].find(x=>x.cod===B2_COD_MPCH);return m?m.dev:null;});
@@ -405,7 +425,7 @@ function renderB2() {
   b2Chart=new Chart(canvas,{
     type:"line",
     data:{
-      labels:años.map(a=>a===actual?a+" (año en curso)":"Ene-Oct "+a),
+      labels:años.map(a=>a===actual?a+" (año en curso)":corteInfo().rango.replace("–","-")+" "+a),
       datasets:[{
         data:serie,borderColor:"#1f5f91",backgroundColor:"rgba(31,95,145,.08)",fill:true,tension:.3,
         borderWidth:2,
@@ -735,9 +755,9 @@ function renderB7() {
 }
 
 // ══════════════════════════════════════════════════════════════
-// B8 — Histórico acumulado Ene–Oct (diseño mejorado)
+// B8 — Histórico acumulado al corte (diseño mejorado)
 // ══════════════════════════════════════════════════════════════
-// Ene–Oct por año: historico_egresos.json manda (2019–2025); los años
+// Acumulado al corte por año: historico_egresos.json manda (2019–2025); los años
 // anteriores (2015–2018) se completan con data/ranking_historico.json.
 function b8Serie() {
   const h={...(B8_HIST||{})};
@@ -749,7 +769,9 @@ function b8Serie() {
 function renderB8() {
   const hist=b8Serie();
   const años=Object.keys(hist).map(Number).sort((a,b)=>a-b);
-  const pie=$("b8pie"); if(pie) pie.textContent=`Fuente: Consulta Amigable MEF ${años[0]||2019}–2025: acumulado Ene–Oct extraído de registros históricos · 2026: acumulado diario`;
+  aplicarCorte();
+  const cInf=corteInfo();
+  const pie=$("b8pie"); if(pie) pie.textContent=`Fuente: Consulta Amigable MEF ${años[0]||2019}–${new Date().getFullYear()-1}: acumulado ${cInf.rango} extraído de registros históricos · 2026: acumulado diario`;
   const dev2026=datos.rubro?datos.rubro.dev:null;
   if(dev2026!==null) años.push(2026);
   const IDX_2026=años.length-1;
@@ -768,7 +790,7 @@ function renderB8() {
         vari=`<div class="hist-var" style="color:${col}">${sym} ${Math.abs(delta).toFixed(1)}% vs ${a-1}</div>`;
       }
       return `<div class="hist-card ${es2026?"cur":""}">
-        <div class="hist-label">${a}${es2026?" · Acum.":" · Ene–Oct"}</div>
+        <div class="hist-label">${a}${es2026?" · Acum.":" · "+cInf.rango}</div>
         <div class="hist-val">${años.length>8?fmtCompacto(v):fmtNum(v)}</div>
         ${vari}
       </div>`;
