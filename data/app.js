@@ -106,7 +106,11 @@ const ARCHIVOS_ESPERADOS = [
 
 // ── Parseo HTML/XLS ──────────────────────────────────────────
 function extraerFilas(buffer) {
-  const text = new TextDecoder("utf-8").decode(buffer);
+  // MEF entrega unos .xls en UTF-8 y otros en Windows-1252 (Ñ = 0xD1, ° = 0xB0).
+  // Se intenta UTF-8 estricto; si falla, se decodifica como Windows-1252.
+  let text;
+  try { text = new TextDecoder("utf-8",{fatal:true}).decode(buffer); }
+  catch(e) { text = new TextDecoder("windows-1252").decode(buffer); }
   const trRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
   const tdRe = /<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi;
   const rows = [];
